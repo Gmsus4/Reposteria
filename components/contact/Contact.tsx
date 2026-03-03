@@ -36,7 +36,7 @@ export const ContactPage = () => {
 
           <div className="relative z-10">
             <IconSparkles size={32} className="text-secundaryColor mb-6" />
-            <h2 className="font-caveat text-6xl text-secundaryColor leading-tight mb-4">Hagamos algo dulce juntos</h2>
+            <h2 className="font-titleText text-6xl text-secundaryColor leading-tight mb-4">Hagamos algo dulce juntos</h2>
             <p className="text-secundaryColor/90 text-sm leading-relaxed mb-2">Cada detalle importa. Cuéntanos tu idea y nosotros la convertimos en algo memorable.</p>
           </div>
 
@@ -138,7 +138,7 @@ export const ContactPage = () => {
 
           <button
             type="submit"
-            className={`w-full cursor-pointer py-4 rounded-primarySize font-caveat text-xl font-bold tracking-wide transition-all duration-300 ${
+            className={`w-full cursor-pointer py-4 rounded-primarySize font-titleText text-xl font-bold tracking-wide transition-all duration-300 ${
               sent ? "bg-primaryColor text-secundaryColor scale-95" : "bg-primaryColor text-secundaryColor hover:opacity-90 active:scale-95"
             }`}
           >

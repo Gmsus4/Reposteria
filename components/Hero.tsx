@@ -1,3 +1,4 @@
+import { images } from "@/data/images"
 import { Titles } from "@/data/titles"
 import Link from "next/link"
 
@@ -65,30 +66,31 @@ export const Hero = () => {
         }
       `}</style>
 
-      <div className="hero-contentt bg-primaryColor w-full flex flex-col items-center justify-center gap-10 xs:gap-20">
-        <div className="hero-offer text-black flex flex-col justify-center items-center gap-8 pt-40 px-8">
-          <div className="hero-text text-center">
-            <h1 className="anim-title font-caveat text-6xl mb-4 text-secundaryColor md:text-8xl lg:text-9xl uppercase">
-              { Titles.home.title }
-            </h1>
-            <p className="anim-subtitle font-medium text-secundaryColor md:text-lg uppercase">{ Titles.home.subtitle }</p>
+      <div className="hero-contentt bg-primaryColor w-full flex flex-col h-dvh overflow-hidden items-center justify-center gap-10 xs:gap-20">
+        <div className="hero-offer text-black flex flex-col justify-center items-center gap-8 px-8">
+          <div className="hero-text text-center z-100">
+            <h1 className={`anim-title font-titleText text-6xl mb-4 text-secundaryColor md:text-8xl lg:text-9xl ${Titles.home.isUppercase ? "uppercase" : ""}`}>{Titles.home.title}</h1>
+            <p className={`anim-subtitle font-medium text-secundaryColor/95 md:text-lg ${Titles.home.isUppercase ? "uppercase" : ""}`}>{Titles.home.subtitle}</p>
           </div>
-          <div className="anim-buttons buttons w-full flex flex-col justify-center gap-2 xs:flex-row xs:gap-4">
+          <div className="anim-buttons z-100 buttons w-full flex flex-col justify-center gap-2 xs:flex-row xs:gap-4">
             <Link href={"/contact"} className="btn rounded-primarySize bg-secundaryColor text-primaryColor shadow-none border-none hover:scale-105 transition-transform duration-200">
               Agenda tu pedido
             </Link>
-            <Link href={"/products"} className="btn rounded-primarySize bg-primaryColor border-secundaryColor shadow-none text-secundaryColor hover:bg-secundaryColor/10 transition-colors duration-200">
+            <Link
+              href={"/products"}
+              className="btn rounded-primarySize bg-primaryColor border-secundaryColor shadow-none text-secundaryColor hover:bg-secundaryColor/10 transition-colors duration-200"
+            >
               Explorar menú
             </Link>
           </div>
         </div>
 
-        <div className="hero-images">
-          <div className="grid grid-cols-1 xs:grid-cols-3 overflow-hidden pt-10 place-items-center">
-            <img src="h1.png" alt="" className="img-left hidden w-auto xs:flex" />
-            <img src="h2.png" alt="" className="img-center w-100 xs:w-auto" /> 
-            <img src="h3.png" alt="" className="img-right hidden w-auto xs:flex" />
-            {/* <img src="hero1.png" alt="" className="flex" />  */}
+        <div className="hero-images absolute overflow-hidden">
+          <div className="absolute inset-0 pointer-events-none z-10" style={{ background: "radial-gradient(ellipse 100% 70% at 50% 50%, var(--primaryColor) 20%, transparent 75%)" }} />
+          <div className="hero-images-content grid grid-cols-1 xs:grid-cols-3 overflow-hidden pt-10 place-items-center">
+            <img src={images.hero.left.src} alt="" className="img-left hidden w-auto xs:flex" />
+            <img src={images.hero.center.src} alt="" className="img-center w-100 xs:w-auto" />
+            <img src={images.hero.right.src} alt="" className="img-right hidden w-auto xs:flex" />
           </div>
         </div>
       </div>

@@ -37,8 +37,10 @@ export const MarqueeStrip = () => {
                 key={idx}
                 className="flex items-center gap-2 px-8 text-secundaryColor whitespace-nowrap"
               >
-                <span className="text-secundaryColor">{item.icon}</span>
-                <span className="font-caveat text-xl">{item.text}</span>
+                <div className="flex items-center gap-2">
+                  <span className="text-secundaryColor">{item.icon}</span>
+                  <span className="font-titleText text-xl mt-1">{item.text}</span>
+                </div>
                 <span className="ml-8 text-secundaryColor/30">✦</span>
               </div>
             ))}

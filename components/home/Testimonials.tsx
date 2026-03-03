@@ -21,7 +21,7 @@ const testimonials = [
 export const Testimonials = () => {
   return (
     <div className="w-full bg-secundaryColor px-6 sm:px-10 lg:px-20 py-16 grid gap-10">
-      <h2 className="text-primaryColor font-caveat text-center text-5xl md:text-6xl">Lo que dicen nuestros clientes</h2>
+      <h2 className="text-primaryColor font-titleText text-center text-3xl font-bold uppercase md:text-5xl mb-10">Lo que dicen <br /> nuestros clientes</h2>
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
 
         {/* Columna 1 */}
@@ -31,7 +31,7 @@ export const Testimonials = () => {
             <div className="p-7 flex flex-col h-full justify-between gap-4">
                 <IconQuote size={30} className="text-primaryColor"/>
                 <p className="text-primaryColor font-semibold text-base">{testimonials[0].quote}</p>
-                <p className="text-primaryColor font-bold text-md">{testimonials[0].author} — {testimonials[0].role}</p>
+                <p className="text-primaryColor font-titleText font-bold text-md">{testimonials[0].author} — {testimonials[0].role}</p>
             </div>
           </div>
           {/* Imagen abajo */}
@@ -49,7 +49,7 @@ export const Testimonials = () => {
           <div className="p-7 flex flex-col h-full justify-between gap-4">
             <IconQuote size={30} className="text-primaryColor"/>
             <p className="text-primaryColor text-base font-semibold">{testimonials[1].quote}</p>
-            <p className="text-primaryColor font-bold text-md">{testimonials[1].author} — {testimonials[1].role}</p>
+            <p className="text-primaryColor font-titleText font-bold text-md">{testimonials[1].author} — {testimonials[1].role}</p>
           </div>
           </div>
         </div>
@@ -60,7 +60,7 @@ export const Testimonials = () => {
             <div className="p-7 flex flex-col h-full justify-between gap-4">
                 <IconQuote size={30} className="text-primaryColor"/>
                 <p className="text-primaryColor font-semibold text-base">{testimonials[2].quote}</p>
-                <p className="text-primaryColor font-bold text-md">{testimonials[2].author} — {testimonials[2].role}</p>
+                <p className="text-primaryColor font-titleText font-bold text-md">{testimonials[2].author} — {testimonials[2].role}</p>
             </div>
           </div>
           <div className="rounded-primarySize overflow-hidden lg:min-h-96 min-h-60 flex-1">

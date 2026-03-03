@@ -2,28 +2,45 @@
 @import '@fontsource/caveat-brush';
 @import '@fontsource-variable/josefin-sans';
 @import '@fontsource-variable/cormorant-garamond';
+@import '@fontsource-variable/libre-bodoni';
+
 @plugin "daisyui";
 
 :root { 
-  /* Colores */
+  /* ------------------- Red Velvet -------------------*/
+  /* Colors */
   /* --primaryColor: #ef2f7f; */
   /* --secundaryColor: #fef3c7; */
-  
-  --primaryColor: #5d0f17; 
-  --secundaryColor: #fff;
-  
-  --roundedSize: 9999px; /* Circle Navbar*/
-  --primarySize: 4px;
+  /* --accentColor: #bb155a; */
+
+  /* Rounded */
+  /* --primarySize: 30px; */
 
   /* Fuentes */
-  --font-caveat: "Cormorant Garamond Variable", cursive;
-  /* --font-caveat: "Caveat Brush", cursive; */
+  /* --font-titleText: "Caveat Brush", cursive; */
+
+
+  /* ------------------- Couronne -------------------*/
+  /* Colors */
+  --primaryColor: #b03726; 
+  --secundaryColor: #fff;
+  /* --secundaryColor: #E75480; */
+  --accentColor: #c3983b;
+
+  /* Rounded */
+  --primarySize: 20px;
+
+  /* Fuentes */
+  --font-titleText: "Libre Bodoni Variable", san;
+  
+  --roundedSize: 9999px; /* Circle Navbar*/
   --font-josefin: "Josefin Sans Variable", cursive; 
 }
 
 @theme inline {
   --color-primaryColor: var(--primaryColor);
   --color-secundaryColor: var(--secundaryColor);
+  --color-accentColor: var(--accentColor);
 
   --radius-roundedSize: var(--roundedSize);
   --radius-primarySize: var(--primarySize);
@@ -31,6 +48,7 @@
 
   /* Fuentes */
 
+  --font-titleText: var(--font-titleText);  /* Listo para usar en clases */
   --font-caveat: var(--font-caveat);  /* Listo para usar en clases */
   --font-josefin: var(--font-josefin);  /* Listo para usar en clases */
 

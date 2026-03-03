@@ -11,6 +11,7 @@ import { IconBrandInstagram, IconBrandWhatsapp, IconSend, IconSend2 } from "@tab
 import { socialMedia } from "@/data/socialMedia"
 import { WhatsAppOrderButton } from "@/components/ui/WhatsAppOrderButton"
 import { contactData } from "@/data/contactData"
+import { Locations } from "@/components/locations/Locations"
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params
@@ -90,10 +91,10 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
           to   { opacity: 1; transform: scale(1); }
         }
 
-        .anim-img {
-          animation: fadeLeft 0.8s cubic-bezier(.22,1,.36,1) 0.1s both,
-                     floatImg 5s ease-in-out 1s infinite;
-        }
+        // .anim-img {
+        //   animation: fadeLeft 0.8s cubic-bezier(.22,1,.36,1) 0.1s both,
+        //              floatImg 5s ease-in-out 1s infinite;
+        // }
         .anim-tag   { animation: fadeUp    0.5s cubic-bezier(.22,1,.36,1) 0.15s both; }
         .anim-title { animation: fadeRight 0.7s cubic-bezier(.22,1,.36,1) 0.2s both; }
         .anim-price { animation: fadeRight 0.6s cubic-bezier(.22,1,.36,1) 0.3s both; }
@@ -119,7 +120,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
 
       <Navbar />
       <main className="relative bg-primaryColor min-h-screen w-full overflow-hidden pt-10">
-        <div className="pointer-events-none absolute inset-0">
+        {/* <div className="pointer-events-none absolute inset-0">
           <div className="absolute top-0 right-0 w-96 h-96 rounded-primarySize bg-secundaryColor/5 blur-3xl" />
           <div className="absolute bottom-1/3 left-0 w-72 h-72 rounded-primarySize bg-secundaryColor/6 blur-3xl" />
           <svg className="absolute inset-0 w-full h-full opacity-[0.03]" xmlns="http://www.w3.org/2000/svg">
@@ -130,17 +131,17 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
             </defs>
             <rect width="100%" height="100%" fill="url(#dots)" />
           </svg>
-        </div>
+        </div> */}
 
-        <div className="relative max-w-6xl mx-auto px-6 sm:px-10 lg:px-20 py-12">
+        <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-20 py-12">
           <BackButton label="Volver a productos" />
 
-          <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
             <div className="w-full lg:w-2/5 flex items-center justify-center">
               <div className="relative">
                <ShareButton title={product.name} description={product.desc} />
                 <div className="absolute inset-0 rounded-primarySize bg-secundaryColor/10 blur-3xl scale-75" />
-                <img src={product.img} alt={product.name} className="anim-img relative z-10 w-64 sm:w-80 lg:w-full max-w-xs drop-shadow-2xl" />
+                <img src={product.img} alt={product.name} className="relative z-10 w-64 sm:w-80 lg:w-full object-contain max-h-[600px] drop-shadow-2xl" />
               </div>
             </div>
 
@@ -155,10 +156,10 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
                 )}
               </div>
 
-              <h1 className="anim-title font-caveat text-5xl sm:text-6xl lg:text-7xl text-secundaryColor leading-tight">{product.name}</h1>
+              <h1 className="anim-title font-titleText text-5xl sm:text-6xl lg:text-7xl text-secundaryColor leading-tight">{product.name}</h1>
 
               <div className="anim-price flex items-baseline gap-1">
-                <span className="shimmer-price font-caveat text-4xl font-bold">${product.price}</span>
+                <span className="shimmer-price font-titleText text-4xl font-bold">${product.price}</span>
                 <span className="text-secundaryColor/80 text-sm">MXN</span>
               </div>
 
@@ -189,9 +190,9 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
 
               <div className="anim-btns gap-3 pt-2">
                 <div className="flex gap-4 flex-col lg:flex-row">
-                  <Link href={socialMedia[0].href} target="_blank" className="btn rounded-primarySize bg-secundaryColor text-primaryColor shadow-none border-none hover:scale-105 transition-transform duration-200 px-8">
-                    Enviar DM por Instagram
-                    <IconBrandInstagram size={18}/>
+                  <Link href={socialMedia.facebook.href} target="_blank" className="btn rounded-primarySize bg-secundaryColor text-primaryColor shadow-none border-none hover:scale-105 transition-transform duration-200 px-8">
+                    Enviar DM por {socialMedia.facebook.title}
+                    {(() => { const Icon = socialMedia.facebook.icon; return <Icon width={18} height={18} /> })()}
                   </Link>
                   <WhatsAppOrderButton phone={contactData[0].items[0].value ?? ""}/>
                 </div>
@@ -203,7 +204,7 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
             <div className="mt-20 pt-10 border-t border-secundaryColor/20">
               <div className="flex items-center gap-3 mb-8" style={{ animation: "fadeUp 0.6s cubic-bezier(.22,1,.36,1) 0.2s both" }}>
                 <span className="h-px w-8 bg-secundaryColor/50" />
-                <h2 className="font-caveat text-3xl text-secundaryColor">También te puede gustar</h2>
+                <h2 className="font-titleText text-3xl text-secundaryColor">También te puede gustar</h2>
               </div>
               <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 gap-5">
                 {related.map((rel) => (
@@ -216,10 +217,10 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
                       <img src={rel.img} alt={rel.name} className="h-32 w-auto object-contain drop-shadow-lg group-hover:scale-110 transition-transform duration-500" />
                     </div>
                     <div className="p-4 flex flex-col gap-1">
-                      <h3 className="font-caveat text-xl text-secundaryColor">{rel.name}</h3>
+                      <h3 className="font-titleText text-xl text-secundaryColor">{rel.name}</h3>
                       <div className="flex items-center justify-between">
                         <span className="text-[10px] uppercase tracking-widest text-secundaryColor/40">{rel.category}</span>
-                        <span className="shimmer-price font-caveat text-lg font-bold">${rel.price}</span>
+                        <span className="shimmer-price font-titleText text-lg font-bold">${rel.price}</span>
                       </div>
                     </div>
                   </Link>
@@ -227,6 +228,16 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
               </div>
             </div>
           )}
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-20">
+           <div className="pt-10 border-t border-secundaryColor/20">
+              <div className="flex items-center gap-3 mb-8" style={{ animation: "fadeUp 0.6s cubic-bezier(.22,1,.36,1) 0.2s both" }}>
+                <span className="h-px w-8 bg-secundaryColor/50" />
+                <h2 className="font-titleText text-3xl text-secundaryColor">Nuestras sucursales</h2>
+              </div>
+              <Locations py={false}/> 
+            </div>
         </div>
       </main>
       <Footer />

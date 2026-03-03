@@ -30,17 +30,20 @@ export default function Home() {
 
         <MarqueeStrip />
 
+        <div className="sections">
+
+        </div>
         <FindAndGet />
 
         <OnlyCategory />
 
-        <div className="bg-secundaryColor lg:py-20 py-10 px-6">
+        <div className="bg-secundaryColor min-h-[calc(100dvh-4rem)] py-26 flex flex-col items-center justify-center gap-10 px-6">
           <Events />
         </div>
 
         <Testimonials />
         
-        <TitlePage title={Titles.locations.title} subtitle={Titles.locations.subtitle} isMarquee={false}/>
+        <TitlePage title={Titles.locations.title} subtitle={Titles.locations.subtitle} isMarquee={false} className="min-h-40 pt-20"/>
 
         <Locations />
 

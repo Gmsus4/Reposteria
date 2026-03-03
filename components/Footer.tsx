@@ -3,6 +3,7 @@ import { IconCup } from "@tabler/icons-react"
 import Link from "next/link"
 import { SocialLinks } from "./ui/SocialLinks"
 import { categories } from "@/data/products"
+import { LogoBtn } from "./ui/LogoBtn"
 
 export const Footer = () => {
   return (
@@ -11,10 +12,8 @@ export const Footer = () => {
         {/* Bloque superior: logo + tagline a ancho completo */}
         <div className="flex flex-col sm:flex-row  sm:items-center sm:justify-between gap-4 mb-10 pb-8 border-b border-secundaryColor/20">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 grid place-items-center bg-secundaryColor rounded-primarySize shrink-0 hover:scale-110 transition-transform duration-200">
-              <Link href="/" className="text-primaryColor">
-                <IconCup width={22} height={22} />
-              </Link>
+            <div className="w-10 h-10 grid place-items-center bg-accentColor rounded-primarySize">
+              <LogoBtn />
             </div>
             <span className="text-secundaryColor mt-1 font-bold text-xl tracking-tight">TAGB</span>
           </div>

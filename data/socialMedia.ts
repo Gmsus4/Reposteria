@@ -1,25 +1,15 @@
 import { Icon, IconBrandFacebook, IconBrandInstagram, IconBrandTiktok } from "@tabler/icons-react";
 
-export interface socialM {
+export interface SocialM {
   title: string;
   href: string;
   icon: Icon;
 }
 
-export const socialMedia: socialM[] = [
-  {
-    title: "Instagram",
-    href: "https://www.instagram.com/tagblade/",
-    icon: IconBrandInstagram,
-  },
-  {
+export const socialMedia: Record<string, SocialM> = {
+  facebook: {
     title: "Facebook",
-    href: "https://www.instagram.com/tagblade/",
+    href: "https://www.facebook.com/reposteriacorona",
     icon: IconBrandFacebook,
-  },  
-  {
-    title: "Tiktok",
-    href: "https://www.instagram.com/tagblade/",
-    icon: IconBrandTiktok,
   },
-];
+};

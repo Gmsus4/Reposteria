@@ -4,7 +4,8 @@ import { useSearchParams, useRouter } from "next/navigation"
 import Link from "next/link"
 import { products } from "@/data/products"
 
-const categories = ["Todos", "Pasteles", "Café", "Postres", "Temporada"]
+const categories = ["Todos", ...new Set(products.map(p => p.category))]
+// const categories = ["Todos", "Pasteles", "Café", "Postres", "Temporada"]
 
 const tagColors: Record<string, string> = {
   "Firma":     "bg-secundaryColor text-primaryColor",
@@ -92,8 +93,8 @@ export const ProductsComponent = () => {
           transition: all 0.2s cubic-bezier(.22,1,.36,1);
         }
         .filter-btn.active {
-          background: #FFE55C;
-          color: var(--color-primaryColor, #E75480);
+          background: var(--color-accentColor);
+          color: var(--color-secundaryColor, #E75480);
         }
 
         .card-overlay {
@@ -139,7 +140,7 @@ export const ProductsComponent = () => {
                   Lo que hacemos
                 </span>
               </div>
-              <h2 className="font-caveat text-5xl sm:text-6xl lg:text-7xl text-secundaryColor leading-tight">
+              <h2 className="font-titleText text-5xl sm:text-6xl lg:text-7xl text-secundaryColor leading-tight">
                 Nuestros <br className="hidden sm:block" />productos
               </h2>
             </div>
@@ -157,9 +158,11 @@ export const ProductsComponent = () => {
               <button
                 key={cat}
                 onClick={() => handleFilter(cat)}
-                className={`filter-btn cursor-pointer text-xs font-semibold uppercase tracking-widest px-4 py-2 rounded-primarySize border border-secundaryColor/20 text-secundaryColor/70 hover:border-secundaryColor/50 hover:text-secundaryColor ${active === cat ? "active" : ""}`}
+                className={`filter-btn py-2 px-6 cursor-pointer text-xs font-semibold uppercase tracking-widest rounded-primarySize border border-secundaryColor/20 text-secundaryColor/70 hover:border-secundaryColor/50 hover:text-secundaryColor ${active === cat ? "active" : ""}`}
               >
-                {cat}
+                <p className="mt-0.5">
+                  {cat}
+                </p>
               </button>
             ))}
           </div>
@@ -183,7 +186,7 @@ export const ProductsComponent = () => {
                     className="img-hover h-40 w-auto object-contain drop-shadow-xl"
                   />
                   {product.tag && (
-                    <span className={`absolute top-3 left-3 text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full ${tagColors[product.tag]}`}>
+                    <span className={`absolute top-3 pt-1.5 left-3 text-[9px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full ${tagColors[product.tag]}`}>
                       {product.tag}
                     </span>
                   )}
@@ -197,8 +200,8 @@ export const ProductsComponent = () => {
                 {/* Info */}
                 <div className="flex flex-col gap-3 p-4 flex-1">
                   <div className="flex items-start justify-between gap-2">
-                    <h3 className="font-caveat text-xl text-secundaryColor leading-tight">{product.name}</h3>
-                    <span className="shimmer-price font-caveat text-xl font-bold shrink-0">
+                    <h3 className="font-titleText text-xl text-secundaryColor leading-tight">{product.name}</h3>
+                    <span className="shimmer-price font-titleText text-xl font-bold shrink-0">
                       ${product.price}
                     </span>
                   </div>

@@ -29,7 +29,7 @@ export const Privacy = () => {
                   </div>
                   <span className="text-xs tracking-widest uppercase text-secundaryColor/60 font-semibold">Última actualización: Febrero 2026</span>
                 </div>
-                <h1 className="font-caveat text-6xl sm:text-7xl text-secundaryColor leading-none">Aviso de Privacidad</h1>
+                <h1 className="font-titleText text-6xl sm:text-7xl text-secundaryColor leading-none">Aviso de Privacidad</h1>
                 <p className="text-secundaryColor/70 text-sm leading-relaxed max-w-xl">
                   Valoramos y respetamos tu privacidad. Este aviso describe cómo recopilamos, usamos y protegemos tus datos personales conforme a la LFPDPPP.
                 </p>
@@ -48,9 +48,9 @@ export const Privacy = () => {
                 >
                   <div className="flex items-center gap-4 px-7 py-5 bg-primaryColor">
                     <div className="bg-secundaryColor rounded-primarySize w-8 h-8 grid place-items-center shrink-0">
-                      <span className="font-caveat text-primaryColor text-sm font-bold leading-none">{idx + 1}</span>
+                      <span className="font-titleText text-primaryColor text-sm font-bold leading-none">{idx + 1}</span>
                     </div>
-                    <h2 className="font-caveat text-2xl sm:text-3xl text-secundaryColor">{section.title}</h2>
+                    <h2 className="font-titleText text-2xl sm:text-3xl text-secundaryColor">{section.title}</h2>
                   </div>
                   <ul className="flex flex-col divide-y divide-primaryColor/20 px-7">
                     {section.items.map((item) => (
@@ -96,7 +96,7 @@ export const Privacy = () => {
               <div className="grid grid-cols-2 gap-2">
                 {["Acceso", "Rectificación", "Cancelación", "Oposición"].map((right) => (
                   <div key={right} className="rounded-primarySize bg-secundaryColor px-3 py-2.5 text-center">
-                    <p className="font-caveat text-primaryColor text-lg leading-none">{right}</p>
+                    <p className="font-titleText text-primaryColor text-lg leading-none">{right}</p>
                   </div>
                 ))}
               </div>
@@ -110,10 +110,10 @@ export const Privacy = () => {
                 <p className="text-xs tracking-widest uppercase text-primaryColor font-semibold">¿Tienes dudas?</p>
               </div>
               <p className="text-xs text-primaryColor leading-relaxed">Si deseas ejercer tus derechos o tienes preguntas sobre este aviso, escríbenos.</p>
-              <Link href="/contact" className="w-full text-center rounded-primarySize bg-primaryColor text-secundaryColor font-caveat text-lg py-2.5 hover:opacity-90 transition-opacity">
+              <Link href="/contact" className="w-full text-center rounded-primarySize bg-primaryColor text-secundaryColor font-titleText text-lg py-2.5 hover:opacity-90 transition-opacity">
                 Contáctanos
               </Link>
-              <Link href="/terms" className="w-full text-center rounded-primarySize border-2 border-primaryColor text-primaryColor font-caveat text-lg py-2.5 hover:bg-primaryColor/10 transition-colors">
+              <Link href="/terms" className="w-full text-center rounded-primarySize border-2 border-primaryColor text-primaryColor font-titleText text-lg py-2.5 hover:bg-primaryColor/10 transition-colors">
                 Términos y condiciones
               </Link>
             </div>

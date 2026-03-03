@@ -14,6 +14,7 @@
   "dependencies": {
     "@fontsource-variable/cormorant-garamond": "^5.2.6",
     "@fontsource-variable/josefin-sans": "^5.2.8",
+    "@fontsource-variable/libre-bodoni": "^5.2.7",
     "@fontsource/caveat-brush": "^5.2.8",
     "@tabler/icons-react": "^3.36.1",
     "daisyui": "^5.5.18",

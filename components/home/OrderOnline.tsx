@@ -1,6 +1,6 @@
 import { contactData } from "@/data/contactData"
 import { socialMedia } from "@/data/socialMedia"
-import { IconBrandInstagram, IconBrandWhatsapp, IconBuildingStore, IconPhone } from "@tabler/icons-react"
+import { IconBrandFacebookFilled, IconBrandInstagram, IconBrandWhatsapp, IconBuildingStore, IconPhone } from "@tabler/icons-react"
 import Link from "next/link"
 
 export const OrderOnline = () => {
@@ -9,7 +9,7 @@ export const OrderOnline = () => {
             <div className="flex flex-col items-center gap-4">
                 <IconBuildingStore size={40} className="text-primaryColor"/>
                 <div className="grid gap-2">
-                    <h2 className="text-primaryColor font-caveat text-center text-4xl md:text-5xl">Ordena en línea</h2>
+                    <h2 className="text-primaryColor font-titleText text-center text-4xl md:text-5xl">Ordena en línea</h2>
                     <p className="text-center text-primaryColor">Get your favorites delivered fast.</p>
                 </div>
             </div>
@@ -17,8 +17,8 @@ export const OrderOnline = () => {
                 <Link href={`tel:${contactData[0].items[0].value}`} className="bg-primaryColor aspect-square w-18 h-18 grid place-items-center rounded-primarySize cursor-pointer hover:bg-primaryColor/93">
                     <IconPhone size={40} className="text-secundaryColor"/>
                 </Link>
-                <Link href={socialMedia[0].href} className="bg-primaryColor aspect-square w-18 h-18 grid place-items-center rounded-primarySize cursor-pointer hover:bg-primaryColor/93">
-                    <IconBrandInstagram size={40} className="text-secundaryColor"/>
+                <Link href={socialMedia.facebook.href} className="bg-primaryColor aspect-square w-18 h-18 grid place-items-center rounded-primarySize cursor-pointer hover:bg-primaryColor/93">
+                    <IconBrandFacebookFilled size={40} className="text-secundaryColor"/>
                 </Link>
                 <Link href={`https://wa.me/${contactData[0].items[0].value}`} className="bg-primaryColor aspect-square w-18 h-18 grid place-items-center rounded-primarySize cursor-pointer hover:bg-primaryColor/93">
                     <IconBrandWhatsapp size={40} className="text-secundaryColor"/>

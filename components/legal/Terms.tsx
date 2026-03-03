@@ -29,7 +29,7 @@ export const TermsAndConditions = () => {
                   </div>
                   <span className="text-xs tracking-widest uppercase text-secundaryColor/60 font-semibold">Última actualización: Febrero 2026</span>
                 </div>
-                <h1 className="font-caveat text-6xl sm:text-7xl text-secundaryColor leading-none">Términos y condiciones</h1>
+                <h1 className="font-titleText text-6xl sm:text-7xl text-secundaryColor leading-none">Términos y condiciones</h1>
                 <p className="text-secundaryColor/70 text-sm leading-relaxed max-w-xl">
                   Al realizar un pedido con nosotros, aceptas los siguientes términos. Te pedimos leerlos con atención para garantizar la mejor experiencia.
                 </p>
@@ -48,9 +48,9 @@ export const TermsAndConditions = () => {
                 >
                   <div className="flex items-center gap-4 px-7 py-5 bg-primaryColor">
                     <div className="bg-secundaryColor rounded-full w-8 h-8 grid place-items-center shrink-0">
-                      <span className="font-caveat text-primaryColor text-sm font-bold leading-none">{idx + 1}</span>
+                      <span className="font-titleText text-primaryColor text-sm font-bold leading-none">{idx + 1}</span>
                     </div>
-                    <h2 className="font-caveat text-2xl sm:text-3xl text-secundaryColor">{section.title}</h2>
+                    <h2 className="font-titleText text-2xl sm:text-3xl text-secundaryColor">{section.title}</h2>
                   </div>
                   <ul className="flex flex-col divide-y divide-primaryColor/20 px-7">
                     {section.items.map((item) => (
@@ -102,7 +102,7 @@ export const TermsAndConditions = () => {
                 ].map((item) => (
                   <div key={item.label} className="flex items-center justify-between rounded-xl bg-secundaryColor px-3 py-2.5">
                     <p className="text-[11px] text-primaryColor/70 leading-none">{item.label}</p>
-                    <p className="font-caveat text-primaryColor text-base leading-none font-bold">{item.value}</p>
+                    <p className="font-titleText text-primaryColor text-base leading-none font-bold">{item.value}</p>
                   </div>
                 ))}
               </div>
@@ -115,10 +115,10 @@ export const TermsAndConditions = () => {
                 <p className="text-xs tracking-widest uppercase text-primaryColor font-semibold">¿Tienes dudas?</p>
               </div>
               <p className="text-xs text-primaryColor leading-relaxed">Si deseas ejercer tus derechos o tienes preguntas sobre este aviso, escríbenos.</p>
-              <Link href="/contact" className="w-full text-center rounded-xl bg-primaryColor text-secundaryColor font-caveat text-lg py-2.5 hover:opacity-90 transition-opacity">
+              <Link href="/contact" className="w-full text-center rounded-xl bg-primaryColor text-secundaryColor font-titleText text-lg py-2.5 hover:opacity-90 transition-opacity">
                 Contáctanos
               </Link>
-              <Link href="/privacy" className="w-full text-center rounded-xl border-2 border-primaryColor text-primaryColor font-caveat text-lg py-2.5 hover:bg-primaryColor/10 transition-colors">
+              <Link href="/privacy" className="w-full text-center rounded-xl border-2 border-primaryColor text-primaryColor font-titleText text-lg py-2.5 hover:bg-primaryColor/10 transition-colors">
                 Aviso de Privacidad
               </Link>
             </div>

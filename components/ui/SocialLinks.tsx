@@ -4,11 +4,11 @@ import Link from "next/link"
 export const SocialLinks = () => {
   return (
     <div className="flex flex-wrap gap-2">
-      {socialMedia.map((item, idx) => {
+      {Object.values(socialMedia).map((item) => {
         const Icon = item.icon
         return (
           <Link
-            key={idx}
+            key={item.title}
             href={item.href}
             className="w-9 h-9 grid place-items-center bg-secundaryColor/10 hover:bg-secundaryColor rounded-primarySize text-secundaryColor hover:text-primaryColor transition-all duration-200 hover:scale-110"
           >

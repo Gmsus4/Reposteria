@@ -1,6 +1,7 @@
 export interface TitleProps {
     title: string;
     subtitle: string;
+    isUppercase?: boolean
 }
 
 export const Titles: Record<string, TitleProps> = {
@@ -21,7 +22,8 @@ export const Titles: Record<string, TitleProps> = {
         subtitle: "Estamos aquí para ayudarte con tu pedido o resolver cualquier duda."
     },
     home: {
-        title: "Make",
-        subtitle: "Repostería"
+        title: "Corounne",
+        isUppercase: true,
+        subtitle: "Respostería y café"
     }
 }

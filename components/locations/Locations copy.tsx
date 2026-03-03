@@ -2,16 +2,12 @@ import Link from "next/link"
 import { locations } from "@/data/locations"
 import { IconBrandGoogleMaps } from "@tabler/icons-react"
 
-interface LocationProps {
-  py?: boolean
-}
-
-export const Locations = ({ py = true}: LocationProps) => {
+export const Locations = () => {
   return (
-    <div className={`bg-primaryColor px-4 ${py ? "py-10" : "py-0"}`}>
+    <div className="bg-primaryColor px-4 pb-10">
       <div className="max-w-6xl mx-auto grid lg:grid-cols-2 grid-cols-1 gap-4">
         <div className=" overflow-hidden h-full order-2 lg:order-1">
-          <img src="/map.png" alt="" className="rounded-primarySize h-full object-cover"/>
+          <img src="map.png" alt="" className="rounded-primarySize h-full object-cover"/>
         </div>
         <div className="grid xs:grid-cols-2 grid-cols-1 gap-4 order-1 lg:order-2">
           {
@@ -25,8 +21,8 @@ export const Locations = ({ py = true}: LocationProps) => {
                   </div>
                 </div>
                 <div className="grid w-full items-center gap-2 grid-cols-6">
-                  <Link href={`/locations/${loc.slug}`} className="bg-primaryColor text-center text-secundaryColor px-4 py-2 rounded-primarySize border-none col-span-4">Ver más</Link>
-                  <Link href={loc.mapUrl} className="bg-primaryColor text-secundaryColor flex items-center justify-center px-4 py-2 rounded-primarySize border-none col-span-2">
+                  <Link href={loc.mapUrl} className="btn bg-primaryColor border-none col-span-4">Ver más</Link>
+                  <Link href={loc.mapUrl} className="btn bg-primaryColor border-none col-span-2">
                     <IconBrandGoogleMaps />
                   </Link>
                 </div>
