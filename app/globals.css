@@ -1,0 +1,44 @@
+@import "tailwindcss";
+@import '@fontsource/caveat-brush';
+@import '@fontsource-variable/josefin-sans';
+@import '@fontsource-variable/cormorant-garamond';
+@plugin "daisyui";
+
+:root { 
+  /* Colores */
+  /* --primaryColor: #ef2f7f; */
+  /* --secundaryColor: #fef3c7; */
+  
+  --primaryColor: #5d0f17; 
+  --secundaryColor: #fff;
+  
+  --roundedSize: 9999px; /* Circle Navbar*/
+  --primarySize: 4px;
+
+  /* Fuentes */
+  --font-caveat: "Cormorant Garamond Variable", cursive;
+  /* --font-caveat: "Caveat Brush", cursive; */
+  --font-josefin: "Josefin Sans Variable", cursive; 
+}
+
+@theme inline {
+  --color-primaryColor: var(--primaryColor);
+  --color-secundaryColor: var(--secundaryColor);
+
+  --radius-roundedSize: var(--roundedSize);
+  --radius-primarySize: var(--primarySize);
+  
+
+  /* Fuentes */
+
+  --font-caveat: var(--font-caveat);  /* Listo para usar en clases */
+  --font-josefin: var(--font-josefin);  /* Listo para usar en clases */
+
+  --breakpoint-xs: 30rem;
+  --breakpoint-2xl: 100rem;
+  --breakpoint-3xl: 120rem;
+}
+
+body{
+  font-family: var(--font-josefin);
+}
