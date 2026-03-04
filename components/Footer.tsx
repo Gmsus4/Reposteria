@@ -12,7 +12,7 @@ export const Footer = () => {
         {/* Bloque superior: logo + tagline a ancho completo */}
         <div className="flex flex-col sm:flex-row  sm:items-center sm:justify-between gap-4 mb-10 pb-8 border-b border-secundaryColor/20">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 grid place-items-center bg-accentColor rounded-primarySize">
+            <div className="grid place-items-center bg-accentColor rounded-primarySize">
               <LogoBtn />
             </div>
             <span className="text-secundaryColor mt-1 font-bold text-xl tracking-tight">TAGB</span>

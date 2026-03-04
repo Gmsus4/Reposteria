@@ -21,7 +21,7 @@ const testimonials = [
 export const Testimonials = () => {
   return (
     <div className="w-full bg-secundaryColor px-6 sm:px-10 lg:px-20 py-16 grid gap-10">
-      <h2 className="text-primaryColor font-titleText text-center text-3xl font-bold uppercase md:text-5xl mb-10">Lo que dicen <br /> nuestros clientes</h2>
+      <h2 className="text-primaryColor font-titleText text-center text-3xl font-bold uppercase md:text-5xl">Lo que dicen <br /> nuestros clientes</h2>
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
 
         {/* Columna 1 */}

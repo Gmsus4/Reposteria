@@ -7,11 +7,13 @@ interface LogoProps {
 
 export const LogoBtn = ({ isColorPrimary = true }: LogoProps) => {
   return (
-    <Link href="/" className="inline-flex items-center font-semibold text-primary transition-all duration-300 hover:scale-110 active:scale-95" aria-label="Home">
-      <IconMilkshake
-        size={28} // ← usually good to control size explicitly
-        className={isColorPrimary ? "text-secundaryColor" : "text-primaryColor"}
-      />
-    </Link>
+     <div className="mask mask-square rounded-md w-11 h-11 grid place-items-center bg-accentColor">
+      <Link href="/" className="inline-flex items-center font-semibold text-primary transition-all duration-300 hover:scale-110 active:scale-95" aria-label="Home">
+        <IconCrownFilled
+          size={28} // ← usually good to control size explicitly
+          className={isColorPrimary ? "text-secundaryColor" : "text-primaryColor"}
+        />
+      </Link>
+     </div>
   )
 }

@@ -85,7 +85,7 @@ export const Navbar = () => {
               })}
             </div>
 
-            <div className="w-11 h-11 grid place-items-center bg-accentColor rounded-primarySize absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
               <LogoBtn />
             </div>
 

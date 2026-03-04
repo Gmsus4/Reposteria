@@ -2,15 +2,15 @@ import { IconBrandCakephp, IconCake, IconCup, IconSparkles } from "@tabler/icons
 
 export const Events = () => {
   return (
-    <>
-    <div className="relative max-w-7xl mx-auto px-10">
+    <div className="bg-secundaryColor min-h-[calc(100dvh-4rem)] py-26 flex flex-col items-center justify-center gap-10 px-6">
+    <div className="relative max-w-7xl mx-auto">
         <div className="min-h-[600px] grid grid-cols-1 lg:grid-cols-2 gap-10">
             <div className="grid gap-4">
-                <div className="grid gap-4">
+                <div className="grid lg:gap-0 gap-4">
                     <h2 className="text-3xl font-bold uppercase md:text-5xl text-primaryColor font-titleText">Endulzamos Tus Momentos</h2>
-                    <p className="text-lg text-primaryColor">Contamos con mesas de postres irresistibles y pasteles personalizados que convierten cualquier celebración en una experiencia memorable. Desde bodas soñadas hasta cumpleaños épicos, cada detalle está pensado para sorprender y deleitar.</p>
+                    <p className="text-base text-primaryColor">Contamos con mesas de postres irresistibles y pasteles personalizados que convierten cualquier celebración en una experiencia memorable. Desde bodas soñadas hasta cumpleaños épicos, cada detalle está pensado para sorprender y deleitar.</p>
                 </div>
-                <div className="icons grid grid-cols-1 xs:grid-cols-2 place-items-center py-8 pb-0 xs:py-20">
+                <div className="icons grid grid-cols-1 xs:grid-cols-2 place-items-center pt-4">
                     <div className="w-full xs:justify-center flex items-center xs:flex-col gap-2 col-span-1 pb-2 xs:pb-8 xs:border-black/10 xs:border-r-1 xs:border-b-1">
                         <div className="bg-primaryColor rounded-primarySize w-12 h-12 grid place-items-center col-span-1">
                             <IconCake className="text-secundaryColor "/>    
@@ -52,6 +52,6 @@ export const Events = () => {
             </div>
         </div>
     </div>
-    </>
+    </div>
   )
 }
