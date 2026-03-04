@@ -5,7 +5,7 @@ import Link from "next/link"
 
 export const FindAndGet = () => {
   return (
-    <div className="bg-secundaryColor min-h-[calc(100dvh-4rem)] px-6 flex flex-col items-center justify-center gap-10">
+    <div className="bg-secundaryColor min-h-[calc(100dvh-4rem)] py-26 flex flex-col items-center justify-center gap-10 px-6">
       {/* <TitlePage title="Encuentra y consigue lo que amas" isBgprimaryColor={false}/> */}
       <h2 className="text-primaryColor font-titleText text-center text-3xl font-bold uppercase md:text-5xl">Encuentra y consigue <br /> lo que amas</h2>
       <div className="max-w-7xl md:w-auto w-full py-10 grid grid-cols-1 xs:grid-cols-3 gap-8 sm:gap-10 lg:gap-16">

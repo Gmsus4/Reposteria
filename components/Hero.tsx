@@ -67,10 +67,10 @@ export const Hero = () => {
         }
       `}</style>
 
-      <div className="hero-contentt bg-primaryColor w-full flex flex-col h-dvh overflow-hidden items-center justify-center gap-10 xs:gap-20">
+      <div className="bg-primaryColor w-full flex flex-col h-dvh overflow-hidden items-center justify-center gap-10 xs:gap-20">
         <div className="hero-offer text-black flex flex-col justify-center items-center gap-8 px-8">
           <div className="hero-text text-center z-100">
-            <h1 className={`anim-title font-titleText text-6xl mb-4 text-secundaryColor md:text-8xl lg:text-9xl ${Titles.home.isUppercase ? "uppercase" : ""}`}>{Titles.home.title}</h1>
+            <h1 className={`anim-title font-titleText text-5xl mb-4 text-secundaryColor md:text-8xl lg:text-9xl ${Titles.home.isUppercase ? "uppercase" : ""}`}>{Titles.home.title}</h1>
             <p className={`anim-subtitle font-medium text-secundaryColor/95 md:text-lg ${Titles.home.isUppercase ? "uppercase" : ""}`}>{Titles.home.subtitle}</p>
           </div>
           <div className="anim-buttons z-100 buttons w-full flex flex-col justify-center gap-2 xs:flex-row xs:gap-4">

@@ -6,7 +6,9 @@ export const LocationsHome = () => {
   return (
     <>
       <TitlePage title={Titles.locations.title} subtitle={Titles.locations.subtitle} isMarquee={false} className="min-h-40 pt-20" />
-      <Locations />
+      <div className="px-6 bg-primaryColor">
+        <Locations />
+      </div>
     </>
   )
 }
