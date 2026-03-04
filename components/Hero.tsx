@@ -1,5 +1,6 @@
 import { images } from "@/data/images"
 import { Titles } from "@/data/titles"
+import Image from "next/image"
 import Link from "next/link"
 
 export const Hero = () => {
@@ -86,11 +87,11 @@ export const Hero = () => {
         </div>
 
         <div className="hero-images absolute overflow-hidden">
-          <div className="absolute inset-0 pointer-events-none z-10" style={{ background: "radial-gradient(ellipse 100% 70% at 50% 50%, var(--primaryColor) 20%, transparent 75%)" }} />
-          <div className="hero-images-content grid grid-cols-1 xs:grid-cols-3 overflow-hidden pt-10 place-items-center">
-            <img src={images.hero.left.src} alt="" className="img-left hidden w-auto xs:flex" />
-            <img src={images.hero.center.src} alt="" className="img-center w-100 xs:w-auto" />
-            <img src={images.hero.right.src} alt="" className="img-right hidden w-auto xs:flex" />
+          <div className="absolute z-20 inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 100% 70% at 50% 50%, var(--primaryColor) 5%, transparent 75%)" }} />
+          <div className="hero-images-content grid grid-cols-1 xs:grid-cols-3 overflow-hidden pt-10 place-items-center z-50">
+            <Image priority src={images.hero.left.src} alt="" width={1920} height={1080} className="hidden img-left w-auto max-w-[600px] xs:flex object-contain" />
+            <Image priority src={images.hero.center.src} alt="" width={1920} height={1080} className="w-full img-center max-w-[320px] xs:max-w-none xs:w-auto object-contain"/>
+            <Image priority src={images.hero.right.src} alt="" width={1920} height={1080} className="hidden img-right w-auto max-w-[600px] xs:flex object-contain" />
           </div>
         </div>
       </div>

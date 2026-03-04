@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { locations } from "@/data/locations"
 import { IconBrandGoogleMaps } from "@tabler/icons-react"
+import Image from "next/image"
 
 interface LocationProps {
   py?: boolean
@@ -8,10 +9,10 @@ interface LocationProps {
 
 export const Locations = ({ py = true}: LocationProps) => {
   return (
-    <div className={`bg-primaryColor px-4 ${py ? "py-10" : "py-0"}`}>
+    <div className={`bg-primaryColor ${py ? "py-10" : "py-0"}`}>
       <div className="max-w-6xl mx-auto grid lg:grid-cols-2 grid-cols-1 gap-4">
         <div className=" overflow-hidden h-full order-2 lg:order-1">
-          <img src="/map.png" alt="" className="rounded-primarySize h-full object-cover"/>
+          <Image width={1920} height={1080} loading="lazy" src="/map.webp" alt="" className="rounded-primarySize h-full object-cover"/>
         </div>
         <div className="grid xs:grid-cols-2 grid-cols-1 gap-4 order-1 lg:order-2">
           {

@@ -1,4 +1,6 @@
+import { images } from "@/data/images"
 import { IconClockHour3Filled, IconSnowflake, IconTemperatureSun } from "@tabler/icons-react"
+import Image from "next/image"
 
 export const Recommendations = () => {
     return (
@@ -21,7 +23,7 @@ export const Recommendations = () => {
                     <p className="text-primaryColor text-center">Para tu evento sacar del refrigerador el producto de 20 a 30 minutos antes </p>
                 </div>
                 <div className="rounded-primarySize overflow-hidden md:col-span-3 col-span-1">
-                    <img src="image2.webp" alt="" />
+                    <Image width={1920} height={1080} src={images.recommendations.image1.src} alt="" />
                 </div>
             </div>
         </>

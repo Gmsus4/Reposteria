@@ -6,7 +6,7 @@ export interface TitleProps {
 
 export const Titles: Record<string, TitleProps> = {
     aboutUs: {
-        title: "Acerca de nosotros :)",
+        title: "Acerca de nosotros",
         subtitle: "Aprenda quienes somos y para que elaboramos postres."
     },
     locations: {

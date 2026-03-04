@@ -1,4 +1,6 @@
+import { images } from "@/data/images"
 import { IconQuote } from "@tabler/icons-react"
+import Image from "next/image"
 
 const testimonials = [
   {
@@ -36,14 +38,14 @@ export const Testimonials = () => {
           </div>
           {/* Imagen abajo */}
           <div className="rounded-primarySize overflow-hidden lg:min-h-96 min-h-60 flex-1">
-            <img src="/testimonials1.webp" alt="" className="w-full h-full object-cover" />
+            <Image loading="lazy" width={1920} height={1080} src={images.testimonials.left.src} alt="" className="w-full h-full object-cover" />
           </div>
         </div>
 
         {/* Columna 2 — imagen grande arriba, testimonial abajo */}
         <div className="flex lg:flex-col md:flex-row flex-col-reverse gap-4">
           <div className="rounded-primarySize overflow-hidden flex-1 lg:min-h-96 min-h-60">
-            <img src="/testimonials2.webp" alt="" className="w-full h-full object-cover" />
+            <Image loading="lazy" width={1920} height={1080} src={images.testimonials.center.src} alt="" className="w-full h-full object-cover" />
           </div>
           <div className="border-1 border-primaryColor/20 rounded-primarySize flex flex-col gap-4 bg-primaryColor/5 md:flex-1 lg:flex-0">
           <div className="p-7 flex flex-col h-full justify-between gap-4">
@@ -64,7 +66,7 @@ export const Testimonials = () => {
             </div>
           </div>
           <div className="rounded-primarySize overflow-hidden lg:min-h-96 min-h-60 flex-1">
-            <img src="/testimonials3.webp" alt="" className="w-full h-full object-cover" />
+            <Image loading="lazy" width={1920} height={1080} src={images.testimonials.right.src} alt={""} className="w-full h-full object-cover" />
           </div>
         </div>
 

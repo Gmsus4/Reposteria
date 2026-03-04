@@ -97,11 +97,9 @@ export default function AboutUs() {
       <TitlePage title={Titles.aboutUs.title} subtitle={Titles.aboutUs.subtitle}/>
 
       <section className="relative bg-secundaryColor w-full overflow-hidden py-20 px-6 sm:px-10 lg:px-20">
-        {/* ── Fondos decorativos ── */}
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-secundaryColor/5 blur-3xl" />
           <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-secundaryColor/8 blur-3xl" />
-          {/* Líneas diagonales de fondo */}
           <svg className="absolute inset-0 w-full h-full opacity-5" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <pattern id="diag" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
@@ -113,22 +111,13 @@ export default function AboutUs() {
         </div>
 
         <div className="relative max-w-6xl mx-auto">
-          {/* ── Layout principal: texto | imágenes ── */}
           <div className="flex flex-col lg:flex-row items-center gap-14 lg:gap-20">
-            {/* ── Columna de texto ── */}
             <div className="flex-1 flex flex-col gap-7 lg:max-w-lg">
-              {/* <Tag /> */}
               <Title />
-
-              {/* Línea shimmer decorativa */}
-              {/* <div className="shimmer-line h-px w-full rounded-full" /> */}
-
-              {/* <Stats /> */}
               <Body />
               <CTA />
             </div>
 
-            {/* ── Columna de imágenes ── */}
             <div className="flex-1 relative flex items-center justify-center w-full min-h-[320px] sm:min-h-[420px]">
               <Images />
             </div>
@@ -139,7 +128,6 @@ export default function AboutUs() {
       <section className="bg-secundaryColor w-full overflow-hidden py-20 px-6 sm:px-10 lg:px-20">
         <Grid />
       </section>
-
       <Footer />
     </>
   )

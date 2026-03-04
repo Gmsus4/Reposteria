@@ -1,3 +1,6 @@
+import { images } from "@/data/images"
+import Image from "next/image"
+
 export const Grid = () => {
   return (
     <div className="relative max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 blocks">
@@ -9,7 +12,7 @@ export const Grid = () => {
         </div>
       </div>
       <div className="bg-accentColor/80 rounded-primarySize lg:col-span-1 overflow-hidden lg:h-80 order-2 lg:order-2">
-        <img src="image1.webp" alt="" className="w-full h-full object-cover" />
+        <Image width={1920} height={1080} src={images.about.left.src} alt="" className="w-full h-full object-cover" />
       </div>
 
       {/* Fila 2 - en móvil: texto primero, luego imagen */}
@@ -20,7 +23,7 @@ export const Grid = () => {
         </div>
       </div>
       <div className="bg-accentColor/80 rounded-primarySize lg:col-span-1 overflow-hidden lg:h-80 order-3 lg:order-4">
-        <img src="image3.webp" alt="" className="w-full h-full object-cover" />
+        <Image width={1920} height={1080} src={images.about.center.src} alt="" className="w-full h-full object-cover" />
       </div>
 
       {/* Fila 3 - en móvil: texto primero, luego imagen */}
@@ -31,7 +34,7 @@ export const Grid = () => {
         </div>
       </div>
       <div className="bg-accentColor/80 rounded-primarySize lg:col-span-2 overflow-hidden lg:h-80 order-6 lg:order-6">
-        <img src="image2.webp" alt="" className="w-full h-full object-cover" />
+        <Image width={1920} height={1080} src={images.about.right.src} alt="" className="w-full h-full object-cover" />
       </div>
     </div>
   )

@@ -1,11 +1,12 @@
 import { images } from "@/data/images"
+import Image from "next/image"
 
 export const Images = () => {
   return (
     <>
       {/* Imagen principal */}
       <div className="about-img-main relative z-10">
-        <img src={images.about.center.src} alt="Pastel Red Velvet" className="w-52 sm:w-64 lg:w-72 drop-shadow-2xl" />
+        <Image width={1920} height={1080} src={images.about.center.src} alt="Pastel Red Velvet" className="w-52 sm:w-64 lg:w-72 drop-shadow-2xl" />
         {/* Badge circular giratorio */}
         <div className="badge-spin absolute -top-6 -right-6 w-16 h-16 sm:w-20 sm:h-20">
           <svg viewBox="0 0 80 80" className="w-full h-full">
@@ -22,7 +23,7 @@ export const Images = () => {
       {/* Imagen secundaria superpuesta */}
       <div className="about-img-secondary absolute -bottom-4 -left-2 sm:left-4 z-20">
         <div className="relative">
-          <img src={images.about.right.src} alt="Detalle de pastelería" className="w-32 sm:w-44 drop-shadow-xl" />
+          <Image width={1920} height={1080} src={images.about.right.src} alt="Detalle de pastelería" className="w-32 sm:w-44 drop-shadow-xl" />
           {/* Pill encima de imagen secundaria */}
           <div className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap bg-primaryColor text-secundaryColor text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-primarySize shadow-lg">
             Receta original
@@ -32,7 +33,7 @@ export const Images = () => {
 
       {/* Imagen terciaria */}
       <div className="absolute -right-2 sm:right-0 bottom-8 z-0" style={{ animation: "floatSlow 6s ease-in-out 2s infinite" }}>
-        <img src={images.about.left.src} alt="" aria-hidden="true" className="w-24 sm:w-32 rotate-6 drop-shadow-lg" />
+        <Image width={1920} height={1080} src={images.about.left.src} alt="" aria-hidden="true" className="w-24 sm:w-32 rotate-6 drop-shadow-lg" />
       </div>
 
       {/* Tarjeta flotante de calificación */}

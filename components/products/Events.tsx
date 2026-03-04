@@ -1,4 +1,6 @@
+import { images } from "@/data/images"
 import { IconBrandCakephp, IconCake, IconCup, IconSparkles } from "@tabler/icons-react"
+import Image from "next/image"
 
 export const Events = () => {
   return (
@@ -39,14 +41,14 @@ export const Events = () => {
             </div>
             <div className="grid xs:grid-cols-2 grid-cols-1 gap-6">
                 <div className="rounded-primarySize overflow-hidden h-full">
-                    <img src="image1.webp" alt="" className="h-full object-cover"/>
+                    <Image loading="lazy" width={1920} height={1080} src={images.events.imageLeft.src} alt="" className="h-full object-cover"/>
                 </div>
                 <div className="grid grid-rows-2 gap-6 h-full">
                     <div className="rounded-primarySize overflow-hidden">
-                        <img src="image2.webp" alt="" className="h-full object-cover"/>
+                        <Image loading="lazy" width={1920} height={1080} src={images.events.imageRightTop.src} alt="" className="h-full object-cover"/>
                     </div>
                     <div className="rounded-primarySize overflow-hidden">
-                        <img src="image3.webp" alt="" className="h-full object-cover"/>
+                        <Image loading="lazy" width={1920} height={1080} src={images.events.imageRightBottom.src} alt="" className="h-full object-cover"/>
                     </div>
                 </div>
             </div>

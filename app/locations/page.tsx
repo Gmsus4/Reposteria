@@ -15,7 +15,9 @@ export default function LocationsPage() {
         <>
             <Navbar />
             <TitlePage title={Titles.locations.title} subtitle={Titles.locations.subtitle}/>
-            <Locations />
+            <div className="px-4 bg-primaryColor">
+                <Locations />
+            </div>
             <Footer />
         </>
     )

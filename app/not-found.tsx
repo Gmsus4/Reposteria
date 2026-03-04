@@ -1,3 +1,5 @@
+import { images } from "@/data/images";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function NotFound() {
@@ -27,21 +29,27 @@ export default function NotFound() {
                     className="relative"
                     style={{ animation: "float 3.5s ease-in-out infinite" }}
                 >
-                    <img
-                        src="/hero1.png"
+                    <Image
+                        width={1920}
+                        height={1080}
+                        src={images.error404.center.src}
                         alt="Pastel perdido"
                         className="w-44 xs:w-56 sm:w-64 drop-shadow-2xl"
                     />
                     {/* Imágenes laterales inclinadas */}
-                    <img
-                        src="/hero2.png"
+                    <Image
+                        width={1920}
+                        height={1080}
+                        src={images.error404.left.src}
                         alt=""
                         aria-hidden="true"
                         className="hidden sm:block absolute -left-20 top-6 w-28 opacity-60 -rotate-12 scale-90"
                         style={{ animation: "float 4s ease-in-out infinite 0.5s" }}
                     />
-                    <img
-                        src="/hero3.png"
+                    <Image
+                        width={1920}
+                        height={1080}
+                        src={images.error404.right.src}
                         alt=""
                         aria-hidden="true"
                         className="hidden sm:block absolute -right-20 top-6 w-28 opacity-60 rotate-12 scale-90"
