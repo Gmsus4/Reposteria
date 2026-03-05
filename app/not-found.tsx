@@ -32,7 +32,7 @@ export default function NotFound() {
                     <Image
                         width={1920}
                         height={1080}
-                        src={images.error404.center.src}
+                        src={images.error404[0].src}
                         alt="Pastel perdido"
                         className="w-44 xs:w-56 sm:w-64 drop-shadow-2xl"
                     />
@@ -40,7 +40,7 @@ export default function NotFound() {
                     <Image
                         width={1920}
                         height={1080}
-                        src={images.error404.left.src}
+                        src={images.error404[1].src}
                         alt=""
                         aria-hidden="true"
                         className="hidden sm:block absolute -left-20 top-6 w-28 opacity-60 -rotate-12 scale-90"
@@ -49,7 +49,7 @@ export default function NotFound() {
                     <Image
                         width={1920}
                         height={1080}
-                        src={images.error404.right.src}
+                        src={images.error404[2].src}
                         alt=""
                         aria-hidden="true"
                         className="hidden sm:block absolute -right-20 top-6 w-28 opacity-60 rotate-12 scale-90"
