@@ -1,13 +1,17 @@
 import { Body } from "@/components/about/Body"
 import { CTA } from "@/components/about/CTA"
-import { Grid } from "@/components/about/Grid"
+import { StatsGrid } from "@/components/about/StatsGrid"
 import { Images } from "@/components/about/Images"
 import { Title } from "@/components/about/Title"
-import { Footer } from "@/components/Footer"
-import { Navbar } from "@/components/Navbar"
+import { OrderOnline } from "@/components/shared/OrderOnline"
+import { AboutDetails } from "@/components/shared/AboutDetails"
+import { BenefitsPanel } from "@/components/about/BenefitsPanel"
+import { MarqueeStrip } from "@/components/ui/MarqueeStrip"
 import { TitlePage } from "@/components/ui/TitlePage"
 import { Titles } from "@/data/titles"
 import { Metadata } from "next"
+import { Navbar } from "@/components/shared/Navbar"
+import { Footer } from "@/components/shared/Footer"
 
 export const metadata: Metadata = {
   title: "Sobre Nosotros",
@@ -126,8 +130,12 @@ export default function AboutUs() {
       </section>
 
       <section className="bg-secundaryColor w-full overflow-hidden py-20 px-6 sm:px-10 lg:px-20">
-        <Grid />
+        <StatsGrid />
       </section>
+      <BenefitsPanel />
+      <AboutDetails />
+      <OrderOnline />
+      <MarqueeStrip />
       <Footer />
     </>
   )

@@ -1,6 +1,7 @@
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
+
 import { TermsAndConditions } from "@/components/legal/Terms";
+import { Footer } from "@/components/shared/Footer";
+import { Navbar } from "@/components/shared/Navbar";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

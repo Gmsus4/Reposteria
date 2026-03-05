@@ -1,6 +1,9 @@
-import { Footer } from "@/components/Footer";
+
 import { Locations } from "@/components/locations/Locations";
-import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/shared/Footer";
+import { Navbar } from "@/components/shared/Navbar";
+
+import { MarqueeStrip } from "@/components/ui/MarqueeStrip";
 import { TitlePage } from "@/components/ui/TitlePage";
 import { Titles } from "@/data/titles";
 import { Metadata } from "next";
@@ -14,10 +17,11 @@ export default function LocationsPage() {
     return (
         <>
             <Navbar />
-            <TitlePage title={Titles.locations.title} subtitle={Titles.locations.subtitle}/>
-            <div className="px-4 bg-primaryColor">
-                <Locations />
+            <div className="bg-primaryColor pb-20 pt-6 min-h-[calc(100dvh-4rem)] py-26 flex flex-col items-center justify-center px-6">
+                <TitlePage title={Titles.locations.title} subtitle={Titles.locations.subtitle} isMarquee={false}/>
+                <Locations py={false}/>
             </div>
+            <MarqueeStrip />
             <Footer />
         </>
     )

@@ -5,7 +5,7 @@ import Link from "next/link"
 
 export const OrderOnline = () => {
     return (
-        <div className="lg:py-30 py-10 bg-secundaryColor flex flex-col gap-8">
+        <div className="lg:py-30 py-10 bg-secundaryColor/95 flex flex-col gap-8">
             <div className="flex flex-col items-center gap-4">
                 <IconBuildingStore size={40} className="text-primaryColor"/>
                 <div className="grid gap-2">

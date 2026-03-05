@@ -1,6 +1,6 @@
 import { ContactPage } from "@/components/contact/Contact";
-import { Footer } from "@/components/Footer";
-import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/shared/Footer";
+import { Navbar } from "@/components/shared/Navbar";
 import { TitlePage } from "@/components/ui/TitlePage";
 import { Titles } from "@/data/titles";
 import { Metadata } from "next";

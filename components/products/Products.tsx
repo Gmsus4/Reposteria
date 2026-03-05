@@ -3,6 +3,8 @@ import { useState, useEffect } from "react"
 import { useSearchParams, useRouter } from "next/navigation"
 import Link from "next/link"
 import { products } from "@/data/products"
+import { Button } from "../ui/Button"
+import { IconArrowNarrowRight } from "@tabler/icons-react"
 
 const categories = ["Todos", ...new Set(products.map(p => p.category))]
 // const categories = ["Todos", "Pasteles", "Café", "Postres", "Temporada"]
@@ -129,29 +131,7 @@ export const ProductsComponent = () => {
           </svg>
         </div>
 
-        <div className="relative max-w-6xl mx-auto">
-
-          {/* Header */}
-          {/* <div className="prod-header flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
-            <div className="flex flex-col gap-3">
-              <div className="flex items-center gap-2">
-                <span className="h-px w-8 bg-secundaryColor/50" />
-                <span className="text-[10px] uppercase tracking-[0.25em] text-secundaryColor/60 font-semibold">
-                  Lo que hacemos
-                </span>
-              </div>
-              <h2 className="font-titleText text-5xl sm:text-6xl lg:text-7xl text-secundaryColor leading-tight">
-                Nuestros <br className="hidden sm:block" />productos
-              </h2>
-            </div>
-            <Link
-              href="/menu"
-              className="self-start sm:self-auto btn rounded-full bg-transparent border-secundaryColor shadow-none text-secundaryColor hover:bg-secundaryColor/10 transition-colors duration-200 px-6 mb-1"
-            >
-              Ver menú completo →
-            </Link>
-          </div> */}
-
+        <div className="relative max-w-6xl mx-auto">          
           {/* Filtros */}
           <div className="prod-filters flex flex-wrap gap-2 mb-10">
             {categories.map((cat) => (
@@ -175,8 +155,6 @@ export const ProductsComponent = () => {
                 href={`/products/${product.id}`} 
                 className="prod-card group relative flex flex-col rounded-primarySize border border-secundaryColor/10 hover:border-secundaryColor/30 bg-secundaryColor/5 hover:bg-secundaryColor/8 overflow-hidden transition-colors duration-300"
                 style={{ animationDelay: `${idx * 0.07}s` }}
-                // onMouseEnter={() => setHovered(product.id)}
-                // onMouseLeave={() => setHovered(null)}
               >
                 {/* Imagen */}
                 <div className="relative overflow-hidden h-48 flex items-center justify-center bg-secundaryColor/5">
@@ -208,8 +186,9 @@ export const ProductsComponent = () => {
                   <span className="text-[10px] uppercase tracking-widest text-secundaryColor/80">
                     {product.category}
                   </span>
-                  <div className="mt-auto w-full rounded-primarySize border border-secundaryColor/20 text-secundaryColor/70 text-xs font-semibold uppercase tracking-widest py-2 text-center group-hover:bg-secundaryColor group-hover:text-primaryColor group-hover:border-secundaryColor transition-all duration-200">
-                    Ver producto →
+                  <div className="mt-auto flex items-center justify-center gap-2 w-full rounded-primarySize border border-secundaryColor/20 text-secundaryColor/70 text-xs font-semibold uppercase tracking-widest py-2 text-center group-hover:bg-secundaryColor group-hover:text-primaryColor group-hover:border-secundaryColor transition-all duration-200">
+                    <p className="pt-0.5">Ver producto</p>
+                    <IconArrowNarrowRight />
                   </div>
                 </div>
               </Link>
@@ -217,21 +196,14 @@ export const ProductsComponent = () => {
           </div>
 
           {/* Footer de sección */}
-          <div
-            className="mt-14 flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-secundaryColor/20"
+          <div className="mt-14 flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-secundaryColor/20"
             style={{ animation: "fadeUp 0.6s cubic-bezier(.22,1,.36,1) 0.6s both" }}
           >
             <p className="text-secundaryColor/90 text-sm text-center sm:text-left">
               ¿No encuentras lo que buscas? Hacemos pedidos especiales.
             </p>
-            <Link
-              href="/contact"
-              className="btn rounded-primarySize bg-secundaryColor text-primaryColor shadow-none border-none hover:scale-105 transition-transform duration-200 px-7 text-sm"
-            >
-              Pedir personalizado
-            </Link>
+            <Button title="Pedir personalizado" url="/contact"/>
           </div>
-
         </div>
       </section>
     </>

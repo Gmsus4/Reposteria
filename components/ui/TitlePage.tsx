@@ -38,7 +38,7 @@ export const TitlePage = ({ title, isBgprimaryColor = true, className = "py-20 p
           </p>
         </div>
       </section>
-      { isMarquee ? <MarqueeStrip /> : ""}
+      {isMarquee && <MarqueeStrip />}
     </>
   )
 }

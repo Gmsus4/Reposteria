@@ -1,6 +1,6 @@
-import { Footer } from "@/components/Footer";
 import LocationDetailClient from "@/components/locations/LocationDetailClient";
-import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/shared/Footer";
+import { Navbar } from "@/components/shared/Navbar";
 import { TitlePage } from "@/components/ui/TitlePage";
 import { locations } from "@/data/locations";
 import { Titles } from "@/data/titles";

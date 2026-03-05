@@ -12,4 +12,9 @@ export const socialMedia: Record<string, SocialM> = {
     href: "https://www.facebook.com/reposteriacorona",
     icon: IconBrandFacebook,
   },
+  instagram: {
+    title: "Instagram",
+    href: "https://www.instagram.com/tagblade/",
+    icon: IconBrandInstagram,
+  },
 };

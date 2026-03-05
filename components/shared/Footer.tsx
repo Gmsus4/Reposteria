@@ -1,9 +1,9 @@
 import { navItems, otherLinks } from "@/data/navItems"
 import { IconCup } from "@tabler/icons-react"
 import Link from "next/link"
-import { SocialLinks } from "./ui/SocialLinks"
 import { categories } from "@/data/products"
-import { LogoBtn } from "./ui/LogoBtn"
+import { LogoBtn } from "../ui/LogoBtn"
+import { SocialLinks } from "../ui/SocialLinks"
 
 export const Footer = () => {
   return (
@@ -95,19 +95,11 @@ export const Footer = () => {
         </div>
 
         {/* Barra inferior */}
-        <div className="mt-10 pt-5 border-t border-secundaryColor/20 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-[11px] text-secundaryColor">
-          <span>© {new Date().getFullYear()} TAGB Industries Ltd. Todos los derechos reservados.</span>
-          {/* <div className="flex gap-4">
-            <Link href="/privacy" className="hover:text-secundaryColor/70 text-secundaryColor transition-colors">
-              Privacidad
-            </Link>
-            <Link href="/terms" className="hover:text-secundaryColor/70 text-secundaryColor transition-colors">
-              Términos
-            </Link>
-            <Link href="" className="hover:text-secundaryColor/70 transition-colors">
-              Cookies
-            </Link>
-          </div> */}
+        <div className="mt-10 pt-5 flex flex-col gap-2 text-[11px] text-secundaryColor">
+          <h3 className="font-titleText font-bold text-center text-5xl xx:text-6xl md:text-8xl lg:text-[160px] xl:text-[180px] w-full leading-none whitespace-nowrap">
+            COROUNNE
+          </h3>
+          <span className="text-center">© {new Date().getFullYear()} TAGB Industries Ltd. Todos los derechos reservados.</span>
         </div>
       </div>
     </footer>

@@ -1,17 +1,18 @@
 import { products } from "@/data/products"
 import { notFound } from "next/navigation"
 import Link from "next/link"
-import { Navbar } from "@/components/Navbar"
-import { Footer } from "@/components/Footer"
 import { BackButton } from "@/components/ui/BackButton"
 
 import type { Metadata } from "next"
 import { ShareButton } from "@/components/ui/ShareButton"
-import { IconBrandInstagram, IconBrandWhatsapp, IconSend, IconSend2 } from "@tabler/icons-react"
+import { IconBrandFacebook, IconBrandInstagram, IconBrandWhatsapp, IconSend, IconSend2 } from "@tabler/icons-react"
 import { socialMedia } from "@/data/socialMedia"
 import { WhatsAppOrderButton } from "@/components/ui/WhatsAppOrderButton"
 import { contactData } from "@/data/contactData"
 import { Locations } from "@/components/locations/Locations"
+import { Button } from "@/components/ui/Button"
+import { Navbar } from "@/components/shared/Navbar"
+import { Footer } from "@/components/shared/Footer"
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params
@@ -190,10 +191,14 @@ export default async function ProductPage({ params }: { params: Promise<{ id: st
 
               <div className="anim-btns gap-3 pt-2">
                 <div className="flex gap-4 flex-col lg:flex-row">
-                  <Link href={socialMedia.facebook.href} target="_blank" className="btn rounded-primarySize bg-secundaryColor text-primaryColor shadow-none border-none hover:scale-105 transition-transform duration-200 px-8">
+                  <Button url={socialMedia.instagram.href} target="_blank" className="grid gap-2" size="min">
+                    Enviar DM por Instagram
+                    <IconBrandInstagram />
+                  </Button>
+                  {/* <Link href={socialMedia.facebook.href} target="_blank" className="btn rounded-primarySize bg-secundaryColor text-primaryColor shadow-none border-none hover:scale-105 transition-transform duration-200 px-8">
                     Enviar DM por {socialMedia.facebook.title}
                     {(() => { const Icon = socialMedia.facebook.icon; return <Icon width={18} height={18} /> })()}
-                  </Link>
+                  </Link> */}
                   <WhatsAppOrderButton phone={contactData[0].items[0].value ?? ""}/>
                 </div>
               </div>

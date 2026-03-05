@@ -5,7 +5,7 @@ import { navItems } from "@/data/navItems"
 import { IconMenu2, IconPhoneCall } from "@tabler/icons-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { LogoBtn } from "./ui/LogoBtn"
+import { LogoBtn } from "../ui/LogoBtn"
 
 export const Navbar = () => {
   const pathname = usePathname()
@@ -35,7 +35,7 @@ export const Navbar = () => {
                       href={item.href}
                       className="flex items-center justify-between px-4 py-3 rounded-xl text-primaryColor font-bold hover:bg-primaryColor hover:text-secundaryColor transition-all duration-200 group"
                     >
-                      <span className="font-titleText text-xl">{item.title}</span>
+                      <span className="text-xl">{item.title}</span>
                       <Icon width={28} height={28} className="text-primaryColor/95 group-hover:text-secundaryColor transition-colors" />
                     </Link>
                   </li>
@@ -47,7 +47,7 @@ export const Navbar = () => {
               <li>
                 <Link
                   href={`tel:${contactData[0].items[0].value}`}
-                  className="flex items-center justify-center px-4 py-3 rounded-xl bg-primaryColor text-secundaryColor font-titleText text-xl hover:opacity-90 transition-opacity"
+                  className="flex items-center justify-center px-4 py-3 rounded-xl bg-primaryColor text-secundaryColor text-xl hover:opacity-90 transition-opacity"
                 >
                   Pedir ahora
                   <IconPhoneCall size={20} />
@@ -77,7 +77,7 @@ export const Navbar = () => {
                       ${active ? "bg-secundaryColor text-primaryColor!" : "hover:bg-secundaryColor hover:text-primaryColor"}
                     `}
                   >
-                    <Link href={item.href} className="flex items-center gap-1.5 font-titleText font-bold">
+                    <Link href={item.href} className="flex items-center gap-1.5 font-bold">
                       {item.title}
                     </Link>
                   </li>
@@ -103,7 +103,7 @@ export const Navbar = () => {
                       ${active ? "bg-secundaryColor text-primaryColor!" : "hover:bg-secundaryColor hover:text-primaryColor"}
                     `}
                   >
-                    <Link href={item.href} className="flex items-center gap-1.5 font-titleText">
+                    <Link href={item.href} className="flex items-center gap-1.5">
                       {item.title}
                     </Link>
                   </li>

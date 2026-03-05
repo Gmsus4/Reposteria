@@ -1,7 +1,7 @@
 import { images } from "@/data/images"
 import { Titles } from "@/data/titles"
 import Image from "next/image"
-import Link from "next/link"
+import { Button } from "../ui/Button"
 
 export const Hero = () => {
   return (
@@ -73,25 +73,18 @@ export const Hero = () => {
             <h1 className={`anim-title font-titleText text-5xl mb-4 text-secundaryColor md:text-8xl lg:text-9xl ${Titles.home.isUppercase ? "uppercase" : ""}`}>{Titles.home.title}</h1>
             <p className={`anim-subtitle font-medium text-secundaryColor/95 md:text-lg ${Titles.home.isUppercase ? "uppercase" : ""}`}>{Titles.home.subtitle}</p>
           </div>
-          <div className="anim-buttons z-100 buttons w-full flex flex-col justify-center gap-2 xs:flex-row xs:gap-4">
-            <Link href={"/contact"} className="btn rounded-primarySize bg-secundaryColor text-primaryColor shadow-none border-none hover:scale-105 transition-transform duration-200">
-              Agenda tu pedido
-            </Link>
-            <Link
-              href={"/products"}
-              className="btn rounded-primarySize bg-primaryColor border-secundaryColor shadow-none text-secundaryColor hover:bg-secundaryColor/10 transition-colors duration-200"
-            >
-              Explorar menú
-            </Link>
+          <div className="anim-buttons z-100 w-full flex flex-col justify-center gap-2 xs:flex-row xs:gap-4">
+            <Button title="Explorar menú" url="/contact"/>
+            <Button title="Explorar menú" url="/locations" isFilled={false}/>
           </div>
         </div>
 
         <div className="hero-images absolute overflow-hidden">
           <div className="absolute z-20 inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 100% 70% at 50% 50%, var(--primaryColor) 5%, transparent 75%)" }} />
           <div className="hero-images-content grid grid-cols-1 xs:grid-cols-3 overflow-hidden pt-10 place-items-center z-50">
-            <Image priority src={images.hero.left.src} alt="" width={1920} height={1080} className="hidden img-left w-auto max-w-[600px] xs:flex object-contain" />
-            <Image priority src={images.hero.center.src} alt="" width={1920} height={1080} className="w-full img-center max-w-[320px] xs:max-w-none xs:w-auto object-contain"/>
-            <Image priority src={images.hero.right.src} alt="" width={1920} height={1080} className="hidden img-right w-auto max-w-[600px] xs:flex object-contain" />
+            <Image priority src={images.hero[0].src} alt="" width={1920} height={1080} className="hidden img-left w-auto max-w-[600px] xs:flex object-contain" />
+            <Image priority src={images.hero[1].src} alt="" width={1920} height={1080} className="w-full z-10 img-center max-w-[320px] xs:max-w-none xs:w-auto object-contain" />
+            <Image priority src={images.hero[2].src} alt="" width={1920} height={1080} className="hidden img-right w-auto max-w-[600px] xs:flex object-contain" />
           </div>
         </div>
       </div>

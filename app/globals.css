@@ -3,6 +3,8 @@
 @import '@fontsource-variable/josefin-sans';
 @import '@fontsource-variable/cormorant-garamond';
 @import '@fontsource-variable/libre-bodoni';
+@import '@fontsource-variable/onest';
+@import '@fontsource/dm-serif-display';
 
 @plugin "daisyui";
 
@@ -30,12 +32,12 @@
 
   /* Rounded */
   --primarySize: 20px;
-
-  /* Fuentes */
-  --font-titleText: "Libre Bodoni Variable", san;
-  
   --roundedSize: 9999px; /* Circle Navbar*/
-  --font-josefin: "Josefin Sans Variable", cursive; 
+
+  /* --font-titleText: "Libre Bodoni Variable", sans-serif; */
+  /* Fuentes */
+  --font-titleText: "DM Serif Display", serif;
+  --font-body: "Onest Variable", sans-serif;
 }
 
 @theme inline {
@@ -50,14 +52,13 @@
   /* Fuentes */
 
   --font-titleText: var(--font-titleText);  /* Listo para usar en clases */
-  --font-caveat: var(--font-caveat);  /* Listo para usar en clases */
-  --font-josefin: var(--font-josefin);  /* Listo para usar en clases */
 
+  --breakpoint-xx: 26rem;
   --breakpoint-xs: 30rem;
   --breakpoint-2xl: 100rem;
   --breakpoint-3xl: 120rem;
 }
 
 body{
-  font-family: var(--font-josefin);
+  font-family: var(--font-body);
 }
