@@ -12,7 +12,7 @@ interface LocationProps {
 export const Locations = ({ py = true}: LocationProps) => {
   return (
     <div className={`bg-primaryColor ${py ? "py-10" : "py-0"}`}>
-      <div className="max-w-6xl mx-auto grid lg:grid-cols-2 grid-cols-1 gap-4">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 grid-cols-1 gap-4">
         <div className=" overflow-hidden h-full order-2 lg:order-1">
           <Image width={1920} height={1080} loading="lazy" src={images.map[0].src} alt="" className="rounded-primarySize h-full object-cover"/>
         </div>

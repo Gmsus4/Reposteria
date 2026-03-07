@@ -12,9 +12,9 @@ export const OnlyCategory = () => {
     const tagProductos = getByTag("Popular");
 
   return (
-    <div className="bg-secundaryColor/95 min-h-[calc(100dvh-4rem)] py-26 flex flex-col items-center justify-center gap-10 px-6">
+    <div className="bg-secundaryColor/95 xs:min-h-[calc(100dvh-4rem)] md:py-26 py-16 flex flex-col items-center justify-center md:gap-16 gap-12 px-6">
       <h2 className="text-primaryColor font-titleText text-center text-3xl font-bold md:text-6xl">Solo por tiempo limitado</h2>
-      <div className="lg:max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 xs:grid-cols-2 gap-4 md:gap-6 gap-y-10 lg:gap-10 px-0 md:px-10 w-full">
+      <div className="lg:max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 xs:grid-cols-2 gap-4 md:gap-6 gap-y-10 lg:gap-10 px-0 xs:px-4 lg:px-0 w-full">
         {tagProductos.map((item, idx) => (
           <Link href={`/products/${item.id}`} className="grid grid-cols-2 xs:grid-cols-1 gap-2 xs:gap-1 group" key={idx}>
             <div className="w-full rounded-primarySize aspect-square overflow-hidden shrink-0 bg-primaryColor grid place-items-center col-span-2">

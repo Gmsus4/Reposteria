@@ -29,7 +29,7 @@ export const Privacy = () => {
                   </div>
                   <span className="text-xs tracking-widest uppercase text-secundaryColor/60 font-semibold">Última actualización: Febrero 2026</span>
                 </div>
-                <h1 className="font-titleText text-6xl sm:text-7xl text-secundaryColor leading-none">Aviso de Privacidad</h1>
+                <h1 className="font-titleText text-4xl sm:text-7xl text-secundaryColor leading-none">Aviso de Privacidad</h1>
                 <p className="text-secundaryColor/70 text-sm leading-relaxed max-w-xl">
                   Valoramos y respetamos tu privacidad. Este aviso describe cómo recopilamos, usamos y protegemos tus datos personales conforme a la LFPDPPP.
                 </p>

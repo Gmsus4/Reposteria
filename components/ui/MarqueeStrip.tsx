@@ -39,7 +39,7 @@ export const MarqueeStrip = () => {
               >
                 <div className="flex items-center gap-2">
                   <span className="text-secundaryColor">{item.icon}</span>
-                  <span className="font-titleText text-xl mt-1">{item.text}</span>
+                  <span className="font-titleText text-xl">{item.text}</span>
                 </div>
                 <span className="ml-8 text-secundaryColor/30">✦</span>
               </div>

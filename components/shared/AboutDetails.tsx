@@ -32,8 +32,8 @@ const features: Feature[] = [
 
 export const AboutDetails = () => {
   return (
-    <div className="bg-secundaryColor min-h-[calc(100dvh-4rem)] flex flex-col items-center justify-center gap-10 py-20 px-6 sm:px-10 lg:px-20">
-      <div className="relative max-w-6xl mx-auto">
+    <div className="bg-secundaryColor xs:min-h-[calc(100dvh-4rem)] md:py-26 py-16 flex flex-col items-center justify-center md:gap-16 gap-12 px-6">
+      <div className="relative max-w-7xl">
         <div className="min-h-[600px] grid grid-cols-1 lg:grid-cols-2 gap-10">
           <div className="grid gap-4">
             <div className="grid lg:gap-0 gap-4">

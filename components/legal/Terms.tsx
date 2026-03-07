@@ -29,7 +29,7 @@ export const TermsAndConditions = () => {
                   </div>
                   <span className="text-xs tracking-widest uppercase text-secundaryColor/60 font-semibold">Última actualización: Febrero 2026</span>
                 </div>
-                <h1 className="font-titleText text-6xl sm:text-7xl text-secundaryColor leading-none">Términos y condiciones</h1>
+                <h1 className="font-titleText text-4xl sm:text-7xl text-secundaryColor leading-none">Términos y condiciones</h1>
                 <p className="text-secundaryColor/70 text-sm leading-relaxed max-w-xl">
                   Al realizar un pedido con nosotros, aceptas los siguientes términos. Te pedimos leerlos con atención para garantizar la mejor experiencia.
                 </p>

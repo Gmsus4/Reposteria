@@ -77,7 +77,7 @@ const items: StatItem[] = [
 
 export const StatsGrid = () => {
   return (
-    <div className="relative max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 blocks">
+    <div className="relative max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 blocks">
       {items.map((item, index) => (
         <div
           key={index}

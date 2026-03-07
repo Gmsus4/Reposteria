@@ -22,9 +22,9 @@ const testimonials = [
 
 export const Testimonials = () => {
   return (
-    <div className="w-full bg-secundaryColor px-6 sm:px-10 lg:px-20 py-16 grid gap-16">
+    <div className="w-full bg-secundaryColor xs:min-h-[calc(100dvh-4rem)] md:py-26 py-16 flex flex-col items-center justify-center md:gap-16 gap-12 px-6">
       <h2 className="text-primaryColor font-titleText text-center text-3xl font-bold md:text-6xl">Lo que dicen <br /> nuestros clientes</h2>
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
 
         {/* Columna 1 */}
         <div className="flex lg:flex-col md:flex-row flex-col gap-4">
