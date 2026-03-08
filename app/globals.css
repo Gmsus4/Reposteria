@@ -1,0 +1,81 @@
+@import "tailwindcss";
+@import '@fontsource/caveat-brush';
+@import '@fontsource-variable/josefin-sans';
+@import '@fontsource-variable/cormorant-garamond';
+@import '@fontsource-variable/libre-bodoni';
+@import '@fontsource-variable/onest';
+@import '@fontsource/dm-serif-display';
+@import '@fontsource/lobster-two';
+
+@plugin "daisyui";
+
+:root { 
+  /* ------------------- Red Velvet -------------------*/
+  /* Colors */
+  /* --primaryColor: #ef2f7f; */
+  /* --secundaryColor: #fef3c7; */
+  /* --accentColor: #bb155a; */
+
+  /* Rounded */
+  /* --primarySize: 30px; */
+
+  /* Fuentes */
+  /* --font-titleText: "Caveat Brush", cursive; */
+
+  /* ------------------- Central mollets -------------------*/
+  /* Colors */
+  /* --primaryColor: #FDFBF0; */
+  /* --secundaryColor: #1A1600; */
+  /* --accentColor: #A68C00; */
+
+  /* DDBB02 */
+  /* FDFBF0 */
+
+  /* Rounded */
+  /* --primarySize: 30px; */
+  /* --roundedSize: 9999px;  */
+
+  /* Fuentes */
+  /* --font-titleText: "Lobster Two", cursive; */
+  /* --font-body: "Onest Variable", sans-serif; */
+
+  /* ------------------- Couronne -------------------*/
+  /* Colors */
+  --primaryColor: #b03726; 
+  --primaryColor: #7e2114; 
+  --secundaryColor: #fff;
+  /* --secundaryColor: #E75480; */
+  --accentColor: #c3983b;
+
+  /* Rounded */
+  --primarySize: 20px;
+  --roundedSize: 9999px; 
+
+  --font-titleText: "Libre Bodoni Variable", sans-serif;
+  /* Fuentes */
+  /* --font-titleText: "DM Serif Display", serif; */
+  --font-body: "Onest Variable", sans-serif;
+}
+
+@theme inline {
+  --color-primaryColor: var(--primaryColor);
+  --color-secundaryColor: var(--secundaryColor);
+  --color-accentColor: var(--accentColor);
+
+  --radius-roundedSize: var(--roundedSize);
+  --radius-primarySize: var(--primarySize);
+  
+
+  /* Fuentes */
+
+  --font-titleText: var(--font-titleText);  /* Listo para usar en clases */
+
+  --breakpoint-xx: 26rem;
+  --breakpoint-xs: 30rem;
+  --breakpoint-2xl: 100rem;
+  --breakpoint-3xl: 120rem;
+}
+
+body{
+  font-family: var(--font-body);
+}
