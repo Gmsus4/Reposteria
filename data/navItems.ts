@@ -13,8 +13,8 @@ export interface otherLinks {
 
 export const navItems: NavItem[] = [
   {
-    title: "Productos",
-    href: "/products",
+    title: "Menú",
+    href: "/menu",
     icon: IconCake,
   },
   {

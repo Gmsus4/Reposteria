@@ -1,4 +1,5 @@
 "use client"
+import { IconArrowAutofitLeftFilled } from "@tabler/icons-react"
 import { useRouter } from "next/navigation"
 
 export const BackButton = ({ label = "Volver" }: { label?: string }) => {
@@ -6,10 +7,11 @@ export const BackButton = ({ label = "Volver" }: { label?: string }) => {
   return (
     <button
       onClick={() => router.back()}
-      className="anim-back inline-flex items-center gap-2 text-yellow/90 hover:text-yellow text-sm mb-10 transition-colors duration-200 group cursor-pointer"
+      className="anim-back absolute bg-primary rounded-primarySize px-4 py-2 top-4 left-4 z-50 inline-flex items-center gap-2 text-darkWarm/90 text-sm transition-colors duration-200 group cursor-pointer"
     >
-      <span className="group-hover:-translate-x-1 transition-transform duration-200">←</span>
-      {label}
+      {/* <span className="group-hover:-translate-x-1 transition-transform duration-200">←</span> */}
+      <IconArrowAutofitLeftFilled />
+      {/* {label} */}
     </button>
   )
 }

@@ -1,5 +1,5 @@
 
-import { ProductsComponent } from "@/components/products/Products";
+import { MenuComponent } from "@/components/menu/Menu";
 import { TitlePage } from "@/components/ui/TitlePage";
 import { Titles } from "@/data/titles";
 import { Suspense } from "react";
@@ -19,9 +19,9 @@ export default function Products(){
     return (
         <>
             <Navbar />
-            <TitlePage title={Titles.products.title} subtitle={Titles.products.subtitle}/>
+            <TitlePage title={Titles.menu.title} subtitle={Titles.menu.subtitle}/>
              <Suspense fallback={null}>
-                <ProductsComponent />
+                <MenuComponent />
              </Suspense>
             <OrderOnline />
             <MarqueeStrip />

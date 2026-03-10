@@ -4,71 +4,63 @@ import Image from "next/image"
 
 const testimonials = [
   {
-    quote: "Cada pastel que he pedido ha superado mis expectativas. El Red Velvet es simplemente inigualable, húmedo y con ese frosting perfecto.",
+    quote: "El Mollete Quejeta suena raro pero es lo mejor que he probado. Ahora lo pido cada vez que vengo.",
     author: "María G.",
-    role: "Amante de los pasteles",
+    role: "Cliente frecuente",
+    image: images.testimonials[0].src,
+    imageFirst: false, // imagen abajo
   },
   {
-    quote: "Pedí la mesa de postres para la boda de mi hija y todos los invitados quedaron encantados. Cada detalle fue perfecto.",
+    quote: "El café de olla me recuerda al de mi abuela. No hay otro lugar en Etzatlán donde lo hagan así.",
     author: "Roberto S.",
-    role: "Padre de la novia",
+    role: "Cliente de siempre",
+    image: images.testimonials[1].src,
+    imageFirst: true, // imagen arriba
   },
   {
-    quote: "El Tiramisú Clásico me transporta directo a Italia. Nunca había probado algo tan auténtico aquí en México.",
+    quote: "Los Chipoquiles son únicos. Ese toque de chipotle los hace completamente diferentes.",
     author: "Jordan T.",
-    role: "Fan del tiramisú",
+    role: "Fan de los chilaquiles",
+    image: images.testimonials[2].src,
+    imageFirst: false, // imagen abajo
   },
 ]
 
 export const Testimonials = () => {
   return (
-    <div className="w-full bg-secundaryColor xs:min-h-[calc(100dvh-4rem)] md:py-26 py-16 flex flex-col items-center justify-center md:gap-16 gap-12 px-6">
-      <h2 className="text-primaryColor font-titleText text-center text-3xl font-bold md:text-6xl">Lo que dicen <br /> nuestros clientes</h2>
+    <div className="w-full bg-creamMid xs:min-h-[calc(100dvh-4rem)] md:py-26 py-16 flex flex-col items-center justify-center md:gap-16 gap-12 px-6">
+      <h2 className="text-darkWarm font-titleText text-3xl md:text-6xl leading-tight text-center">
+        Nos alegra <br /> el día leerlos
+      </h2>
+
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {testimonials.map((t, i) => (
+          <div key={i} className={`flex gap-4 ${t.imageFirst ? "lg:flex-col md:flex-row flex-col-reverse" : "lg:flex-col md:flex-row flex-col"}`}>
+            {t.imageFirst && (
+              <div className="rounded-primarySize overflow-hidden flex-1 lg:min-h-96 min-h-60">
+                <Image loading="lazy" width={1920} height={1080} src={t.image} alt="" className="w-full h-full object-cover" />
+              </div>
+            )}
 
-        {/* Columna 1 */}
-        <div className="flex lg:flex-col md:flex-row flex-col gap-4">
-          {/* Testimonial 1 */}
-          <div className="border-1 border-primaryColor/20 rounded-primarySize flex flex-col gap-4 bg-primaryColor/5 md:flex-1 lg:flex-0">
-            <div className="p-7 flex flex-col h-full justify-between gap-4">
-                <IconQuote size={30} className="text-primaryColor"/>
-                <p className="text-primaryColor font-light text-base">{testimonials[0].quote}</p>
-                <p className="text-primaryColor font-semibold font-titleText text-md">{testimonials[0].author} — {testimonials[0].role}</p>
+            <div className="border-1 border-darkWarm/20 rounded-primarySize bg-cream/15 md:flex-1 lg:flex-0">
+              <div className="p-7 flex flex-col h-full justify-between gap-4">
+                <IconQuote size={30} className="text-darkWarm" />
+                <p className="text-darkWarm font-light text-base">{t.quote}</p>
+                <div className="flex gap-2">
+                  <p className="text-darkWarm font-semibold font-titleText text-md">{t.author}</p>
+                  <p className="text-darkWarm">—</p>
+                  <p className="text-darkWarm/80 font-semibold font-titleText text-md">{t.role}</p>
+                </div>
+              </div>
             </div>
-          </div>
-          {/* Imagen abajo */}
-          <div className="rounded-primarySize overflow-hidden lg:min-h-96 min-h-60 flex-1">
-            <Image loading="lazy" width={1920} height={1080} src={images.testimonials[0].src} alt="" className="w-full h-full object-cover" />
-          </div>
-        </div>
 
-        {/* Columna 2 — imagen grande arriba, testimonial abajo */}
-        <div className="flex lg:flex-col md:flex-row flex-col-reverse gap-4">
-          <div className="rounded-primarySize overflow-hidden flex-1 lg:min-h-96 min-h-60">
-            <Image loading="lazy" width={1920} height={1080} src={images.testimonials[1].src} alt="" className="w-full h-full object-cover" />
+            {!t.imageFirst && (
+              <div className="rounded-primarySize overflow-hidden lg:min-h-96 min-h-60 flex-1">
+                <Image loading="lazy" width={1920} height={1080} src={t.image} alt="" className="w-full h-full object-cover" />
+              </div>
+            )}
           </div>
-          <div className="border-1 border-primaryColor/20 rounded-primarySize flex flex-col gap-4 bg-primaryColor/5 md:flex-1 lg:flex-0">
-          <div className="p-7 flex flex-col h-full justify-between gap-4">
-            <IconQuote size={30} className="text-primaryColor"/>
-            <p className="text-primaryColor text-base font-light">{testimonials[1].quote}</p>
-            <p className="text-primaryColor font-semibold font-titleText text-md">{testimonials[1].author} — {testimonials[1].role}</p>
-          </div>
-          </div>
-        </div>
-
-        {/* Columna 3 — testimonial arriba, imagen abajo */}
-        <div className="flex lg:flex-col md:flex-row flex-col gap-4">
-          <div className="border-1 border-primaryColor/20 rounded-primarySize flex flex-col gap-4 bg-primaryColor/5 md:flex-1 lg:flex-0">
-            <div className="p-7 flex flex-col h-full justify-between gap-4">
-                <IconQuote size={30} className="text-primaryColor"/>
-                <p className="text-primaryColor font-light text-base">{testimonials[2].quote}</p>
-                <p className="text-primaryColor font-semibold font-titleText text-md">{testimonials[2].author} — {testimonials[2].role}</p>
-            </div>
-          </div>
-          <div className="rounded-primarySize overflow-hidden lg:min-h-96 min-h-60 flex-1">
-            <Image loading="lazy" width={1920} height={1080} src={images.testimonials[2].src} alt={""} className="w-full h-full object-cover" />
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   )

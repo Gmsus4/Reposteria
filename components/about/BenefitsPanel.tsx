@@ -28,16 +28,18 @@ const benefits: Benefit[] = [
 
 export const BenefitsPanel = () => {
   return (
-    <div className="bg-secundaryColor py-20 px-6 sm:px-10 lg:px-20">
-      <h2 id="recomendaciones" className="text-center xs:text-6xl text-4xl w-2/3 m-auto font-titleText text-primaryColor mb-12 scroll-mt-20">
+    <div className="bg-cream py-20 px-6 sm:px-10 lg:px-20">
+      <h2 id="recomendaciones" className="text-center xs:text-6xl text-4xl w-2/3 m-auto font-titleText text-darkWarm mb-12 scroll-mt-20">
        Lo Que Nos Hace Únicos
       </h2>
       <div className="relative max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
         {benefits.map(({ icon: Icon, title, description }) => (
-          <div key={title} className="grid place-items-center rounded-primarySize p-10 border-primaryColor/30 bg-primaryColor/5 border-1">
-            <Icon className="text-primaryColor mb-2" height={30} width={30} />
-            <h3 className="text-primaryColor font-bold font-titleText mb-2 text-2xl xs:text-xl text-center">{title}</h3>
-            <p className="text-primaryColor text-center">{description}</p>
+          <div key={title} className="grid place-items-center rounded-primarySize p-10 bg-cream shadow-md">
+            <div className="aspect-square w-14 grid place-items-center bg-darkWarm rounded-full mb-4">
+              <Icon className="text-primary" height={30} width={30} />
+            </div>
+            <h3 className="text-darkWarm font-bold font-titleText mb-2 text-2xl xs:text-xl text-center">{title}</h3>
+            <p className="text-darkMid text-center">{description}</p>
           </div>
         ))}
         <div className="rounded-primarySize overflow-hidden md:col-span-3 col-span-1">

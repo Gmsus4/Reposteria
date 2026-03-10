@@ -18,8 +18,8 @@ export default function LocationsPage() {
         <>
             <Navbar />
                 <TitlePage title={Titles.locations.title} subtitle={Titles.locations.subtitle} isMarquee={false}/>
-                <div className="pb-12 bg-primaryColor px-6">
-                    <Locations py={false}/>
+                <div className="bg-cream px-6">
+                    <Locations className="py-21"/>
                 </div>
             <MarqueeStrip />
             <Footer />

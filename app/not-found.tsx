@@ -1,105 +1,184 @@
-import { images } from "@/data/images";
-import Image from "next/image";
-import Link from "next/link";
+import Link from "next/link"
+import { Button } from "@/components/ui/Button"
+import { Navbar } from "@/components/shared/Navbar"
 
 export default function NotFound() {
-    return (
-        <div className="relative bg-primaryColor w-full min-h-screen flex flex-col items-center justify-center overflow-hidden px-6">
+  return (
+    <>
+      <style>{`
+        @keyframes fadeSlideDown {
+          from { opacity: 0; transform: translateY(-30px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeSlideUp {
+          from { opacity: 0; transform: translateY(40px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to   { opacity: 1; }
+        }
+        @keyframes scaleUp {
+          from { opacity: 0; transform: scale(0.7); }
+          to   { opacity: 1; transform: scale(1); }
+        }
+        @keyframes slideTag {
+          from { opacity: 0; transform: translateX(-20px); }
+          to   { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes spinSlow {
+          from { transform: rotate(0deg); }
+          to   { transform: rotate(360deg); }
+        }
+        @keyframes drawCircle {
+          from { stroke-dashoffset: 1600; }
+          to   { stroke-dashoffset: 0; }
+        }
+        @keyframes glowPulse {
+          0%, 100% { opacity: 0.5; transform: scale(1); }
+          50%       { opacity: 0.8; transform: scale(1.05); }
+        }
+        @keyframes floatCenter {
+          0%, 100% { transform: translateY(0px); }
+          50%       { transform: translateY(-14px); }
+        }
+        @keyframes wiggle {
+          0%, 100% { transform: rotate(-3deg); }
+          50%       { transform: rotate(3deg); }
+        }
 
-            {/* Fondo decorativo: círculos difusos */}
-            <div className="pointer-events-none absolute inset-0 overflow-hidden">
-                <div className="absolute -top-20 -left-20 w-72 h-72 rounded-full bg-secundaryColor/10 blur-3xl" />
-                <div className="absolute -bottom-10 -right-10 w-96 h-96 rounded-full bg-secundaryColor/10 blur-3xl" />
-            </div>
+        .anim-eyebrow { animation: slideTag     0.6s cubic-bezier(.22,1,.36,1) 0.1s both; }
+        .anim-title-1 { animation: fadeSlideDown 0.7s cubic-bezier(.22,1,.36,1) 0.2s both; }
+        .anim-title-2 { animation: fadeSlideDown 0.7s cubic-bezier(.22,1,.36,1) 0.32s both; }
+        .anim-sub     { animation: fadeIn        0.5s ease 0.45s both; }
+        .anim-buttons { animation: fadeSlideUp   0.6s cubic-bezier(.22,1,.36,1) 0.55s both; }
+        .anim-badge   { animation: scaleUp       0.7s cubic-bezier(.34,1.56,.64,1) 0.6s both; }
+        .anim-ring    { animation: fadeIn        1s ease 0.8s both; }
+        .anim-draw    { animation: drawCircle    2s cubic-bezier(.22,1,.36,1) 0.5s both; }
 
-            {/* 404 gigante de fondo */}
-            <span
-                className="absolute select-none font-caveat font-bold text-secundaryColor/10 pointer-events-none"
-                style={{ fontSize: "clamp(8rem, 35vw, 28rem)", lineHeight: 1 }}
-                aria-hidden="true"
-            >
-                404
-            </span>
+        .badge-spin  { animation: spinSlow 18s linear infinite; transform-origin: center; }
+        .float-badge { animation: floatCenter 5s ease-in-out infinite; }
+        .glow        { animation: glowPulse 4s ease-in-out infinite; }
+        .wiggle      { animation: wiggle 3s ease-in-out infinite; }
 
-            {/* Contenido principal */}
-            <div className="relative z-10 flex flex-col items-center gap-8 text-center max-w-lg">
+        .grain-overlay {
+          position: absolute;
+          inset: 0;
+          background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+          opacity: 0.06;
+          pointer-events: none;
+          z-index: 1;
+        }
 
-                {/* Imagen central flotante */}
-                <div
-                    className="relative"
-                    style={{ animation: "float 3.5s ease-in-out infinite" }}
-                >
-                    <Image
-                        width={1920}
-                        height={1080}
-                        src={images.error404[1].src}
-                        alt="Pastel perdido"
-                        className="w-44 xs:w-56 sm:w-64 drop-shadow-2xl"
-                    />
-                    {/* Imágenes laterales inclinadas */}
-                    <Image
-                        width={1920}
-                        height={1080}
-                        src={images.error404[0].src}
-                        alt=""
-                        aria-hidden="true"
-                        className="hidden sm:block absolute -left-20 top-6 w-28 opacity-60 -rotate-12 scale-90"
-                        style={{ animation: "float 4s ease-in-out infinite 0.5s" }}
-                    />
-                    <Image
-                        width={1920}
-                        height={1080}
-                        src={images.error404[2].src}
-                        alt=""
-                        aria-hidden="true"
-                        className="hidden sm:block absolute -right-20 top-6 w-28 opacity-60 rotate-12 scale-90"
-                        style={{ animation: "float 4s ease-in-out infinite 1s" }}
-                    />
-                </div>
+        .arc-text {
+          font-size: 11px;
+          letter-spacing: 3px;
+          fill: currentColor;
+          text-transform: uppercase;
+        }
 
-                {/* Texto */}
-                <div className="flex flex-col gap-3">
-                    <h1 className="font-caveat text-5xl sm:text-6xl text-secundaryColor leading-tight">
-                        ¡Ay, se nos cayó <br className="hidden xs:block" /> el pastel!
-                    </h1>
-                    <p className="text-secundaryColor/70 text-sm sm:text-base font-medium leading-relaxed">
-                        La página que buscas no existe o fue movida.<br />
-                        Pero nuestros pasteles siguen aquí, esperándote.
-                    </p>
-                </div>
+        .title-glow {
+          filter: drop-shadow(0 0 30px rgba(212,170,0,0.35));
+        }
+      `}</style>
+    
+    <Navbar />
+      <div className="bg-darkWarm relative w-full flex flex-col h-dvh overflow-hidden items-center justify-center">
+        <div className="grain-overlay" />
 
-                {/* Pill decorativo con el error */}
-                <div className="flex items-center gap-2 bg-secundaryColor/10 border border-secundaryColor/20 rounded-full px-4 py-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-secundaryColor/60 animate-pulse" />
-                    <span className="text-secundaryColor/60 text-xs tracking-widest uppercase font-semibold">
-                        Error 404 — Página no encontrada
-                    </span>
-                </div>
-
-                {/* Botones */}
-                <div className="flex flex-col xs:flex-row gap-3 w-full justify-center">
-                    <Link
-                        href="/"
-                        className="btn rounded-full bg-secundaryColor text-primaryColor shadow-none border-none hover:scale-105 transition-transform duration-200 px-6"
-                    >
-                        Volver al inicio
-                    </Link>
-                    <Link
-                        href="/menu"
-                        className="btn rounded-full bg-transparent border-secundaryColor shadow-none text-secundaryColor hover:bg-secundaryColor/10 transition-colors duration-200 px-6"
-                    >
-                        Explorar menú
-                    </Link>
-                </div>
-            </div>
-
-            {/* Animación float */}
-            <style>{`
-                @keyframes float {
-                    0%, 100% { transform: translateY(0px); }
-                    50% { transform: translateY(-12px); }
-                }
-            `}</style>
+        {/* Glow central */}
+        <div className="glow absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="w-[420px] h-[420px] rounded-full"
+            style={{ background: "radial-gradient(circle, rgba(212,170,0,0.18) 0%, transparent 70%)" }} />
         </div>
-    );
+
+        {/* Círculo SVG animado */}
+        <div className="anim-draw absolute inset-0 flex items-center justify-center pointer-events-none">
+          <svg className="absolute w-[420px] h-[420px] sm:w-[520px] sm:h-[520px]" viewBox="0 0 600 600">
+            <circle cx="300" cy="300" r="240" fill="none" stroke="rgba(212,170,0,0.2)"
+              strokeWidth="1" strokeDasharray="1600" />
+          </svg>
+        </div>
+
+        {/* Círculos exteriores */}
+        <div className="anim-ring absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="w-[680px] h-[680px] rounded-full border border-primary/10" />
+        </div>
+        <div className="anim-ring absolute inset-0 flex items-center justify-center pointer-events-none" style={{ animationDelay: "0.15s" }}>
+          <div className="w-[880px] h-[880px] rounded-full border border-primary/[0.06]" />
+        </div>
+
+        {/* Top left tag */}
+        <div className="anim-eyebrow absolute top-26 left-8 hidden lg:flex items-center gap-2">
+          <span className="w-6 h-px bg-primary/80" />
+          <span className="text-[10px] uppercase tracking-[0.3em] text-primary">Etzatlán, Jalisco</span>
+        </div>
+
+        {/* Top right tag */}
+        <div className="anim-eyebrow absolute top-26 right-8 hidden lg:flex items-center gap-2" style={{ animationDelay: "0.2s" }}>
+          <span className="text-[10px] uppercase tracking-[0.3em] text-primary">Desde 2020</span>
+          <span className="w-6 h-px bg-primary/80" />
+        </div>
+
+        {/* Contenido principal */}
+        <div className="relative z-10 flex flex-col items-center gap-5 px-6 text-center">
+
+          {/* Eyebrow */}
+          <div className="anim-eyebrow flex items-center gap-3">
+            <span className="w-8 h-px bg-primary/40" />
+            <span className="text-[10px] uppercase tracking-[0.3em] text-primary/70 font-medium">Error de navegación</span>
+            <span className="w-8 h-px bg-primary/40" />
+          </div>
+
+          {/* 404 como título principal */}
+          <div className="title-glow flex flex-col items-center leading-none">
+            <h1 className="anim-title-1 font-titleText leading-none text-primary text-8xl sm:text-9xl md:text-[10rem] lg:text-[13rem]"
+              style={{ textShadow: "3px 5px 0px rgba(0,0,0,0.5)" }}>
+              404
+            </h1>
+          </div>
+
+          {/* Mensaje con tono de la marca */}
+          <div className="anim-sub flex flex-col items-center gap-2">
+            <div className="flex items-center gap-3 w-full max-w-sm">
+              <span className="flex-1 h-px bg-primary/30" />
+              <span className="w-1 h-1 rounded-full bg-primary/50" />
+              <span className="text-[10px] uppercase tracking-[0.25em] text-primary/60">página no encontrada</span>
+              <span className="w-1 h-1 rounded-full bg-primary/50" />
+              <span className="flex-1 h-px bg-primary/30" />
+            </div>
+            <p className="text-primary/50 text-sm max-w-xs leading-relaxed mt-2">
+              Esta página se perdió como los <span className="text-primary/80 italic">panecitos del día</span> — a veces no hay.
+            </p>
+          </div>
+
+          {/* Botones */}
+          <div className="anim-buttons flex flex-col xs:flex-row gap-3 pt-2">
+            <Button title="Volver al inicio" url="/" isFilled={true} className="outline-primary text-primary" />
+            <Button title="Ver el menú" url="/menu" isFilled={false} className="text-darkWarm" />
+          </div>
+        </div>
+
+        {/* Badge rotatorio */}
+        <div className="anim-badge float-badge absolute bottom-12 right-10 hidden lg:block">
+          <svg width="110" height="110" viewBox="0 0 110 110" className="text-primary/40">
+            <path id="circle-path-404" d="M 55,55 m -38,0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0" fill="none" />
+            <text className="arc-text badge-spin">
+              <textPath href="#circle-path-404">CENTRAL MOLLETES · CAFETERÍA · ETZATLÁN ·</textPath>
+            </text>
+            <circle cx="55" cy="55" r="28" fill="none" stroke="currentColor" strokeWidth="0.5" />
+            <circle cx="55" cy="55" r="4" fill="currentColor" opacity="0.3" />
+          </svg>
+        </div>
+
+        {/* Scroll hint reemplazado por "volver" */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5"
+          style={{ animation: "fadeIn 1s ease 1.2s both", opacity: 0 }}>
+          <span className="text-[9px] uppercase tracking-[0.3em] text-primary/30">Central Molletes</span>
+          <div className="w-px h-8 bg-primary/20" />
+        </div>
+
+      </div>
+    </>
+  )
 }

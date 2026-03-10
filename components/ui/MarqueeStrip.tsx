@@ -28,20 +28,20 @@ export const MarqueeStrip = () => {
         // }
       `}</style>
 
-      <div className="marquee-track bg-primaryColor/90 py-4">
+      <div className="marquee-track bg-darkMid py-4">
         {/* Renderiza dos veces para el loop infinito */}
         {[...Array(2)].map((_, copyIdx) => (
           <div key={copyIdx} className="flex items-center">
             {items.map((item, idx) => (
               <div
                 key={idx}
-                className="flex items-center gap-2 px-8 text-secundaryColor whitespace-nowrap"
+                className="flex items-center gap-2 px-8 text-primary whitespace-nowrap"
               >
                 <div className="flex items-center gap-2">
-                  <span className="text-secundaryColor">{item.icon}</span>
+                  <span className="text-primary">{item.icon}</span>
                   <span className="font-titleText text-xl">{item.text}</span>
                 </div>
-                <span className="ml-8 text-secundaryColor/30">✦</span>
+                <span className="ml-8 text-primary/30">✦</span>
               </div>
             ))}
           </div>

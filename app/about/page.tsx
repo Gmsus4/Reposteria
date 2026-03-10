@@ -1,8 +1,5 @@
-import { Body } from "@/components/about/Body"
-import { CTA } from "@/components/about/CTA"
 import { StatsGrid } from "@/components/about/StatsGrid"
 import { Images } from "@/components/about/Images"
-import { Title } from "@/components/about/Title"
 import { OrderOnline } from "@/components/shared/OrderOnline"
 import { AboutDetails } from "@/components/shared/AboutDetails"
 import { BenefitsPanel } from "@/components/about/BenefitsPanel"
@@ -12,6 +9,8 @@ import { Titles } from "@/data/titles"
 import { Metadata } from "next"
 import { Navbar } from "@/components/shared/Navbar"
 import { Footer } from "@/components/shared/Footer"
+import { Button } from "@/components/ui/Button"
+import { socialMedia } from "@/data/socialMedia"
 
 export const metadata: Metadata = {
   title: "Sobre Nosotros",
@@ -98,28 +97,23 @@ export default function AboutUs() {
       `}</style>
 
       <Navbar />
-      <TitlePage title={Titles.aboutUs.title} subtitle={Titles.aboutUs.subtitle}/>
+      <TitlePage title={Titles.aboutUs.title} subtitle={Titles.aboutUs.subtitle} />
 
-      <section className="relative bg-secundaryColor w-full overflow-hidden py-20 px-6 sm:px-10 lg:px-20">
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute top-0 right-0 w-96 h-96 rounded-full bg-secundaryColor/5 blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-72 h-72 rounded-full bg-secundaryColor/8 blur-3xl" />
-          <svg className="absolute inset-0 w-full h-full opacity-5" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="diag" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-                <path d="M-10 10 L10 -10 M0 40 L40 0 M30 50 L50 30" stroke="#FFE55C" strokeWidth="0.8" fill="none" />
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#diag)" />
-          </svg>
-        </div>
-
+      <section className="relative bg-cream w-full overflow-hidden py-20 px-6 sm:px-10 lg:px-20">
         <div className="relative max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-14 lg:gap-20">
             <div className="flex-1 flex flex-col gap-7 lg:max-w-lg">
-              <Title />
-              <Body />
-              <CTA />
+              <h2 className="about-title font-titleText text-4xl sm:text-5xl lg:text-6xl text-darkWarm leading-tight">El Sabor Que Siempre Recuerdas</h2>
+              <div className="about-body flex flex-col gap-4 text-darkWarm text-sm sm:text-base leading-relaxed">
+                <p>
+                  En Central molletes creemos que los mejores momentos merecen los mejores postres. Elaboramos repostería artesanal y café de autor en tres pueblos de Jalisco, con el cuidado de quien hornea
+                  para su propia familia. Cada visita, una experiencia que sabe a hogar.
+                </p>
+              </div>
+              <div className="about-cta flex flex-col xs:flex-row gap-3 pt-2">
+                <Button title="Contáctanos" url="/contact" />
+                <Button title="Visítanos en Facebook" url={socialMedia.facebook.href} isFilled={false} target="_blank" className="text-darkWarm"/>
+              </div>
             </div>
 
             <div className="flex-1 relative flex items-center justify-center w-full min-h-[320px] sm:min-h-[420px]">
@@ -129,7 +123,7 @@ export default function AboutUs() {
         </div>
       </section>
 
-      <section className="bg-secundaryColor w-full overflow-hidden py-20 px-6 sm:px-10 lg:px-20">
+      <section className="bg-cream w-full overflow-hidden py-20 px-6 sm:px-10 lg:px-20">
         <StatsGrid />
       </section>
       <BenefitsPanel />

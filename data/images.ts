@@ -3,6 +3,20 @@
 // Las secciones referencian estos assets, no rutas directas.
 
 const assets = {
+  chilaquiles: {
+    src: "https://images.pexels.com/photos/31843919/pexels-photo-31843919.jpeg",
+    alt: "Chilaquiles",
+  },
+  hotcakes: {
+    src: "https://images.pexels.com/photos/30892986/pexels-photo-30892986.jpeg",
+    alt: "Hotcakes",
+  },
+  cafe: {
+    src: "https://images.pexels.com/photos/2068296/pexels-photo-2068296.jpeg",
+    alt: "Café",
+  },
+
+
   // ── Marca / Generales ──────────────────────────────────────
   cupcakeRedVelvet: {
     src: "/images/cupcake-red-velvet.webp",
@@ -20,6 +34,7 @@ const assets = {
     src: "/images/brownie-decorado-cerezas.webp",
     alt: "Brownie de chocolate con rizos de chocolate, nueces y cerezas rojas",
   },
+
   cookiesChocolateNavidad: {
     src: "/images/cookies-chocolate-navidad.webp",
     alt: "Stack de cookies de chocolate rellenas con moño navideño rojo y blanco",
@@ -101,16 +116,33 @@ export const images = {
   ],
 
   statsGrid: [
-    assets.rebanadaPastelChocolateChispas,
-    assets.cupcakeVainillaFrambuesaFlor,
-    assets.latteTazaRoja,
+    assets.chilaquiles,
+    assets.hotcakes,
+    assets.cafe,
+  ],
+
+  categories2: [
+    { ...assets.pastelChocolateIntenso, name: "pasteles", path: "/menu?category=Pasteles" },
+    { ...assets.latteArtesanal,          name: "bebidas",  path: "/menu?category=Bebidas"  },
+    { ...assets.tartaFrutosRojos,    name: "postres",  path: "/menu?category=Postres"  },
   ],
 
   categories: [
-    { ...assets.pastelChocolateIntenso, name: "pasteles", path: "/products?category=Pasteles" },
-    { ...assets.latteArtesanal,          name: "bebidas",  path: "/products?category=Bebidas"  },
-    { ...assets.tartaFrutosRojos,    name: "postres",  path: "/products?category=Postres"  },
+    assets.pastelChocolateIntenso,
+    assets.latteArtesanal,   
+    assets.tartaFrutosRojos,
+    assets.tartaFrutosRojos,
+    assets.tartaFrutosRojos,
+    assets.tartaFrutosRojos,
+    assets.tartaFrutosRojos,
+    assets.tartaFrutosRojos,
+    assets.tartaFrutosRojos,
+    assets.tartaFrutosRojos,
+    assets.tartaFrutosRojos,
+    assets.tartaFrutosRojos,
+    assets.tartaFrutosRojos,
   ],
+
 
   aboutDetails: [
     assets.terrazaRestaurante,

@@ -1,6 +1,4 @@
-import { images } from "@/data/images"
 import { Titles } from "@/data/titles"
-import Image from "next/image"
 import { Button } from "../ui/Button"
 
 export const Hero = () => {
@@ -19,73 +17,163 @@ export const Hero = () => {
           0%, 100% { transform: translateY(0px); }
           50%       { transform: translateY(-14px); }
         }
-        @keyframes floatLeft {
-          0%, 100% { transform: translateY(0px) rotate(-12deg) scale(0.75); }
-          50%       { transform: translateY(-10px) rotate(-12deg) scale(0.75); }
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to   { opacity: 1; }
         }
-        @keyframes floatRight {
-          0%, 100% { transform: translateY(0px) rotate(12deg) scale(0.75); }
-          50%       { transform: translateY(-10px) rotate(12deg) scale(0.75); }
+        @keyframes scaleUp {
+          from { opacity: 0; transform: scale(0.7); }
+          to   { opacity: 1; transform: scale(1); }
         }
-        @keyframes revealLeft {
-          from { opacity: 0; transform: translateX(-40px) rotate(-12deg) scale(0.75); }
-          to   { opacity: 1; transform: translateX(0)    rotate(-12deg) scale(0.75); }
+        @keyframes slideTag {
+          from { opacity: 0; transform: translateX(-20px); }
+          to   { opacity: 1; transform: translateX(0); }
         }
-        @keyframes revealRight {
-          from { opacity: 0; transform: translateX(40px) rotate(12deg) scale(0.75); }
-          to   { opacity: 1; transform: translateX(0)   rotate(12deg) scale(0.75); }
+        @keyframes spinSlow {
+          from { transform: rotate(0deg); }
+          to   { transform: rotate(360deg); }
         }
-        @keyframes revealCenter {
-          from { opacity: 0; transform: translateY(50px) scale(0.92); }
-          to   { opacity: 1; transform: translateY(0)    scale(1); }
+        @keyframes drawCircle {
+          from { stroke-dashoffset: 1600; }
+          to   { stroke-dashoffset: 0; }
         }
-
-        .anim-title {
-          animation: fadeSlideDown 0.7s cubic-bezier(.22,1,.36,1) both;
-        }
-        .anim-subtitle {
-          animation: fadeSlideDown 0.7s cubic-bezier(.22,1,.36,1) 0.15s both;
-        }
-        .anim-buttons {
-          animation: fadeSlideUp 0.6s cubic-bezier(.22,1,.36,1) 0.3s both;
+        @keyframes glowPulse {
+          0%, 100% { opacity: 0.5; transform: scale(1); }
+          50%       { opacity: 0.8; transform: scale(1.05); }
         }
 
-        .img-left {
-          animation:
-            revealLeft 0.8s cubic-bezier(.22,1,.36,1) 0.4s both,
-            floatLeft  4.5s ease-in-out 1.2s infinite;
+        .anim-eyebrow  { animation: slideTag      0.6s cubic-bezier(.22,1,.36,1) 0.1s both; }
+        .anim-title-1  { animation: fadeSlideDown  0.7s cubic-bezier(.22,1,.36,1) 0.2s both; }
+        .anim-title-2  { animation: fadeSlideDown  0.7s cubic-bezier(.22,1,.36,1) 0.32s both; }
+        .anim-divider  { animation: fadeIn         0.5s ease 0.45s both; }
+        .anim-buttons  { animation: fadeSlideUp    0.6s cubic-bezier(.22,1,.36,1) 0.5s both; }
+        .anim-badge    { animation: scaleUp        0.7s cubic-bezier(.34,1.56,.64,1) 0.6s both; }
+        .anim-ring     { animation: fadeIn         1s ease 0.8s both; }
+        .anim-draw     { animation: drawCircle     2s cubic-bezier(.22,1,.36,1) 0.5s both; }
+
+        .badge-spin  { animation: spinSlow 18s linear infinite; transform-origin: center; }
+        .float-badge { animation: floatCenter 5s ease-in-out infinite; }
+        .glow        { animation: glowPulse 4s ease-in-out infinite; }
+
+        .grain-overlay {
+          position: absolute;
+          inset: 0;
+          background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+          opacity: 0.06;
+          pointer-events: none;
+          z-index: 1;
         }
-        .img-center {
-          animation:
-            revealCenter 0.9s cubic-bezier(.22,1,.36,1) 0.25s both,
-            floatCenter  4s ease-in-out 1.15s infinite;
+
+        .arc-text {
+          font-size: 11px;
+          letter-spacing: 3px;
+          fill: currentColor;
+          text-transform: uppercase;
         }
-        .img-right {
-          animation:
-            revealRight 0.8s cubic-bezier(.22,1,.36,1) 0.4s both,
-            floatRight  4.5s ease-in-out 1.4s infinite;
+
+        .title-glow {
+          filter: drop-shadow(0 0 30px rgba(212,170,0,0.35));
         }
       `}</style>
 
-      <div className="bg-primaryColor w-full flex flex-col h-dvh overflow-hidden items-center justify-center gap-10 xs:gap-20">
-        <div className="hero-offer text-black flex flex-col justify-center items-center gap-8 px-8">
-          <div className="hero-text text-center z-100">
-            <h1 className={`anim-title font-titleText text-5xl mb-4 text-secundaryColor md:text-8xl lg:text-9xl ${Titles.home.isUppercase ? "uppercase" : ""}`}>{Titles.home.title}</h1>
-            <p className={`anim-subtitle font-medium text-secundaryColor/95 md:text-lg ${Titles.home.isUppercase ? "uppercase" : ""}`}>{Titles.home.subtitle}</p>
+      <div className="bg-darkWarm relative w-full flex flex-col h-dvh overflow-hidden items-center justify-center">
+        <div className="grain-overlay" />
+
+        {/* Glow amarillo central */}
+        <div className="glow absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="w-[420px] h-[420px] rounded-full"
+            style={{ background: "radial-gradient(circle, rgba(212,170,0,0.18) 0%, transparent 70%)" }} />
+        </div>
+
+        {/* Círculo SVG que se dibuja */}
+        <div className="anim-draw absolute inset-0 flex items-center justify-center pointer-events-none">
+          <svg className="absolute w-[420px] h-[420px] sm:w-[520px] sm:h-[520px]" viewBox="0 0 600 600">
+            <circle cx="300" cy="300" r="240" fill="none" stroke="rgba(212,170,0,0.2)"
+              strokeWidth="1" strokeDasharray="1600" />
+          </svg>
+        </div>
+
+        {/* Círculos exteriores */}
+        <div className="anim-ring absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="w-[680px] h-[680px] rounded-full border border-primary/10" />
+        </div>
+        <div className="anim-ring absolute inset-0 flex items-center justify-center pointer-events-none" style={{ animationDelay: "0.15s" }}>
+          <div className="w-[880px] h-[880px] rounded-full border border-primary/[0.06]" />
+        </div>
+
+        {/* Top left tag */}
+        <div className="anim-eyebrow absolute top-26 left-8 hidden lg:flex items-center gap-2">
+          <span className="w-6 h-px bg-primary/80" />
+          <span className="text-[10px] uppercase tracking-[0.3em] text-primary">Etzatlán, Jalisco</span>
+        </div>
+
+        {/* Top right tag */}
+        <div className="anim-eyebrow absolute top-26 right-8 hidden lg:flex items-center gap-2" style={{ animationDelay: "0.2s" }}>
+          <span className="text-[10px] uppercase tracking-[0.3em] text-primary">Desde 2020</span>
+          <span className="w-6 h-px bg-primary/80" />
+        </div>
+
+        {/* Main content */}
+        <div className="relative z-10 flex flex-col items-center gap-5 px-6 text-center">
+
+          {/* Eyebrow */}
+          <div className="anim-eyebrow flex items-center gap-3">
+            <span className="w-8 h-px bg-primary/40" />
+            <span className="text-[10px] uppercase tracking-[0.3em] text-primary/70 font-medium">Cafetería</span>
+            <span className="w-8 h-px bg-primary/40" />
           </div>
-          <div className="anim-buttons z-100 w-full flex flex-col justify-center gap-2 xs:flex-row xs:gap-4">
-            <Button title="Explorar menú" url="/contact"/>
-            <Button title="Explorar menú" url="/locations" isFilled={false}/>
+
+          {/* Título dos líneas */}
+          <div className="title-glow flex flex-col items-center leading-none">
+            <h1 className={`anim-title-1 font-titleText leading-none text-primary
+              text-4xl sm:text-4xl md:text-5xl lg:text-6xl
+              ${Titles.home.isUppercase ? "uppercase" : ""}`}
+              style={{ textShadow: "2px 3px 0px rgba(0,0,0,0.4)" }}
+            >
+              Central
+            </h1>
+            <h1 className={`anim-title-2 font-titleText leading-none text-primary
+              text-8xl sm:text-9xl md:text-[8rem] lg:text-[11rem]
+              ${Titles.home.isUppercase ? "uppercase" : ""}`}
+              style={{ textShadow: "3px 5px 0px rgba(0,0,0,0.5)", marginTop: "-0.05em" }}
+            >
+              molletes
+            </h1>
+          </div>
+
+          {/* Divider */}
+          <div className="anim-divider flex items-center gap-3 w-full max-w-xs">
+            <span className="flex-1 h-px bg-primary/30" />
+            <span className="w-1 h-1 rounded-full bg-primary/50" />
+            <span className="text-[10px] uppercase tracking-[0.25em] text-primary/60">{Titles.home.subtitle}</span>
+            <span className="w-1 h-1 rounded-full bg-primary/50" />
+            <span className="flex-1 h-px bg-primary/30" />
+          </div>
+
+          {/* Buttons */}
+          <div className="anim-buttons flex flex-col xs:flex-row gap-3 pt-2">
+            <Button title="Explorar menú" url="/menu" isFilled={true} className="outline-primary text-primary"/>
+            <Button title="Ubicaciones" url="/locations" isFilled={false} className="text-darkWarm"/>
           </div>
         </div>
 
-        <div className="hero-images absolute overflow-hidden">
-          <div className="absolute z-20 inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 100% 70% at 50% 50%, var(--primaryColor) 5%, transparent 75%)" }} />
-          <div className="hero-images-content grid grid-cols-1 xs:grid-cols-3 overflow-hidden pt-10 place-items-center z-50">
-            <Image priority src={images.hero[0].src} alt="" width={1920} height={1080} className="hidden img-left w-auto max-w-[600px] xs:flex object-contain" />
-            <Image priority src={images.hero[1].src} alt="" width={1920} height={1080} className="w-full z-10 img-center max-w-[320px] xs:max-w-none xs:w-auto object-contain" />
-            <Image priority src={images.hero[2].src} alt="" width={1920} height={1080} className="hidden img-right w-auto max-w-[600px] xs:flex object-contain" />
-          </div>
+        {/* Badge rotatorio */}
+        <div className="anim-badge float-badge absolute bottom-12 right-10 hidden lg:block">
+          <svg width="110" height="110" viewBox="0 0 110 110" className="text-primary/40">
+            <path id="circle-path" d="M 55,55 m -38,0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0" fill="none" />
+            <text className="arc-text badge-spin">
+              <textPath href="#circle-path">CENTRAL MOLLETES · CAFETERÍA · ETZATLÁN ·</textPath>
+            </text>
+            <circle cx="55" cy="55" r="28" fill="none" stroke="currentColor" strokeWidth="0.5" />
+            <circle cx="55" cy="55" r="4" fill="currentColor" opacity="0.3" />
+          </svg>
+        </div>
+
+        {/* Scroll hint */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5"
+          style={{ animation: "fadeIn 1s ease 1.2s both", opacity: 0 }}>
+          <span className="text-[9px] uppercase tracking-[0.3em] text-primary/80">Scroll</span>
+          <div className="w-px h-8 bg-primary/80" />
         </div>
       </div>
     </>

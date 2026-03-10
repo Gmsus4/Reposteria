@@ -18,36 +18,36 @@ export const Navbar = () => {
   }
 
   return (
-    <div className="navbar bg-primaryColor fixed z-1000">
+    <div className="navbar bg-primary fixed z-1000">
       <div className="max-w-7xl mx-auto w-full flex items-center justify-center">
         <div className="navbar-start lg:hidden">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost px-0 lg:hidden text-secundaryColor hover:bg-secundaryColor/10 transition-colors">
+            <div tabIndex={0} role="button" className="btn btn-ghost px-0 lg:hidden text-darkWarm hover:bg-darkWarm/10 transition-colors">
               <IconMenu2 size={40} />
             </div>
 
-            <ul tabIndex={-1} className="menu dropdown-content z-[999] mt-3 w-64 p-3 shadow-2xl rounded-2xl bg-secundaryColor border border-primaryColor/10">
+            <ul tabIndex={-1} className="menu dropdown-content z-[999] mt-3 w-64 p-3 shadow-2xl rounded-2xl bg-darkWarm border border-primary/10">
               {navItems.map((item, idx) => {
                 const Icon = item.icon
                 return (
                   <li key={idx}>
                     <Link
                       href={item.href}
-                      className="flex items-center justify-between px-4 py-3 rounded-xl text-primaryColor font-bold hover:bg-primaryColor hover:text-secundaryColor transition-all duration-200 group"
+                      className="flex items-center justify-between px-4 py-3 rounded-xl text-primary font-bold hover:bg-primary hover:text-darkWarm transition-all duration-200 group"
                     >
                       <span className="text-xl">{item.title}</span>
-                      <Icon width={28} height={28} className="text-primaryColor/95 group-hover:text-secundaryColor transition-colors" />
+                      <Icon width={28} height={28} className="text-primary/95 group-hover:text-darkWarm transition-colors" />
                     </Link>
                   </li>
                 )
               })}
 
               {/* Separador + CTA */}
-              <div className="h-px bg-primaryColor/10 my-1" />
+              <div className="h-px bg-primary/10 my-1" />
               <li>
                 <Link
                   href={`tel:${contactData[0].items[0].value}`}
-                  className="flex items-center justify-center px-4 py-3 rounded-xl bg-primaryColor text-secundaryColor text-xl hover:opacity-90 transition-opacity"
+                  className="flex items-center justify-center px-4 py-3 rounded-xl bg-primary text-darkWarm text-xl hover:opacity-90 transition-opacity"
                 >
                   Pedir ahora
                   <IconPhoneCall size={20} />
@@ -56,7 +56,7 @@ export const Navbar = () => {
             </ul>
           </div>
 
-          {/* <Link href="/" className="btn btn-ghost text-secundaryColor font-titleText text-xl">
+          {/* <Link href="/" className="btn btn-ghost text-darkWarm font-titleText text-xl">
             TAGB
           </Link> */}
         </div>
@@ -72,9 +72,9 @@ export const Navbar = () => {
                   <li
                     key={idx}
                     className={`
-                      font-semibold text-secundaryColor transition-all duration-300 ease-out
+                      font-semibold text-darkWarm transition-all duration-300 ease-out
                       px-4 rounded-primarySize cursor-pointer
-                      ${active ? "bg-secundaryColor text-primaryColor!" : "hover:bg-secundaryColor hover:text-primaryColor"}
+                      ${active ? "bg-darkWarm text-primary!" : "hover:bg-darkWarm hover:text-primary"}
                     `}
                   >
                     <Link href={item.href} className="flex items-center gap-1.5 font-bold">
@@ -98,9 +98,9 @@ export const Navbar = () => {
                   <li
                     key={idx + 2}
                     className={`
-                      font-semibold text-secundaryColor transition-all duration-300 ease-out
+                      font-semibold text-darkWarm transition-all duration-300 ease-out
                       px-4 rounded-primarySize cursor-pointer
-                      ${active ? "bg-secundaryColor text-primaryColor!" : "hover:bg-secundaryColor hover:text-primaryColor"}
+                      ${active ? "bg-darkWarm text-primary!" : "hover:bg-darkWarm hover:text-primary"}
                     `}
                   >
                     <Link href={item.href} className="flex items-center gap-1.5">
@@ -114,7 +114,7 @@ export const Navbar = () => {
         </div>
 
         <div className="navbar-end lg:hidden">
-          {/* <Link target="_blank" href={"https://www.instagram.com/tagblade/"} className="btn bg-secundaryColor border-none text-primaryColor shadow-none font-bold">
+          {/* <Link target="_blank" href={"https://www.instagram.com/tagblade/"} className="btn bg-darkWarm border-none text-primary shadow-none font-bold">
             <IconBrandInstagram />
           </Link> */}
           <div className="w-11 h-11 bg-accentColor rounded-primarySize grid place-items-center">

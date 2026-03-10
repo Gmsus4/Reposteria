@@ -10,7 +10,7 @@ export const SocialLinks = () => {
           <Link
             key={item.title}
             href={item.href}
-            className="w-9 h-9 grid place-items-center bg-secundaryColor/10 hover:bg-secundaryColor rounded-primarySize text-secundaryColor hover:text-primaryColor transition-all duration-200 hover:scale-110"
+            className="w-9 h-9 grid place-items-center bg-darkWarm hover:bg-darkMid rounded-primarySize text-secundaryColor hover:text-primaryColor transition-all duration-200 hover:scale-110"
           >
             <Icon width={18} height={18} />
           </Link>

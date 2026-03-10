@@ -13,11 +13,11 @@ interface ButtonProps {
 
 export const Button = ({ url = "#", title, target = "_self", isFilled = true, children, size = "default", className = ''}: ButtonProps) => {
   const content = children || title || 'Button';
-  const baseStyles = `inline-flex items-center justify-center rounded-primarySize ${size === "default" ? "px-6 py-2.5" : "px-4 py-1"}  font-medium text-center transition-all duration-100 ease-out outline-1 hover:scale-x-[0.98] active:scale-[0.95]`;
+  const baseStyles = `inline-flex items-center justify-center rounded-primarySize ${size === "default" ? "px-6 py-2.5" : "px-4 py-1"}  font-medium text-center transition-all duration-100 ease-out hover:scale-x-[0.98] active:scale-[0.95]`;
 
-  const filledStyles = `bg-secundaryColor text-primaryColor`;
+  const filledStyles = `bg-transparent text-darkWarm outline-1 outline-darkWarm`;
 
-  const outlinedStyles = `bg-primaryColor text-secundaryColor`;
+  const outlinedStyles = `bg-primary text-darwWarm hover:bg-primaryMuted`;
 
   const variantClass = isFilled ? filledStyles : outlinedStyles;
 

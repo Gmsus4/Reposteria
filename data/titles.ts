@@ -6,24 +6,24 @@ export interface TitleProps {
 
 export const Titles: Record<string, TitleProps> = {
     aboutUs: {
-        title: "Acerca de nosotros",
-        subtitle: "Aprenda quienes somos y para que elaboramos postres."
+        title: "Central Molletes",
+        subtitle: "Una cafetería que nació del amor por el buen café y los molletes bien hechos."
     },
     locations: {
-        title: "Nuestras Ubicaciones",
-        subtitle: "Encuéntranos en estos lugares y ven a disfrutar de nuestros postres."
+        title: "Dónde encontrarnos",
+        subtitle: "Ven a visitarnos en Etzatlán, Jalisco."
     },
-    products: {
-        title: "Nuestros Productos",
-        subtitle: "Explora nuestra variedad de postres artesanales hechos con los mejores ingredientes."
+    menu: {
+        title: "Nuestro Menú",
+        subtitle: "Molletes, chilaquiles, café y más — todo hecho al momento."
     },
     contact: {
         title: "Contáctanos",
         subtitle: "Estamos aquí para ayudarte con tu pedido o resolver cualquier duda."
     },
     home: {
-        title: "COROUNNE",
-        isUppercase: true,
-        subtitle: "Repostería y café"
+        title: "Central molletes",
+        isUppercase: false,
+        subtitle: "Cafetería"
     }
 }

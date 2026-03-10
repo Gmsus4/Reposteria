@@ -10,57 +10,47 @@
 @plugin "daisyui";
 
 :root { 
-  /* ------------------- Red Velvet -------------------*/
-  /* Colors */
-  /* --primaryColor: #ef2f7f; */
-  /* --secundaryColor: #fef3c7; */
-  /* --accentColor: #bb155a; */
-
-  /* Rounded */
-  /* --primarySize: 30px; */
-
-  /* Fuentes */
-  /* --font-titleText: "Caveat Brush", cursive; */
-
   /* ------------------- Central mollets -------------------*/
   /* Colors */
-  /* --primaryColor: #FDFBF0; */
-  /* --secundaryColor: #1A1600; */
-  /* --accentColor: #A68C00; */
+  --primary: #DDBB02;
+  --primaryDark: #A68C00;
+  --primaryMuted: #C9A800;
+
+  --darkWarm: #1A1600;
+  --darkMid: #2E2600;
+  --surfaceWarm: #3D3200;
+
+  --cream: #FDFBF0;
+  --creamMid: #F5EFC8; 
+
+  --background: var(--cream);
 
   /* DDBB02 */
   /* FDFBF0 */
 
   /* Rounded */
-  /* --primarySize: 30px; */
-  /* --roundedSize: 9999px;  */
-
-  /* Fuentes */
-  /* --font-titleText: "Lobster Two", cursive; */
-  /* --font-body: "Onest Variable", sans-serif; */
-
-  /* ------------------- Couronne -------------------*/
-  /* Colors */
-  --primaryColor: #b03726; 
-  --primaryColor: #7e2114; 
-  --secundaryColor: #fff;
-  /* --secundaryColor: #E75480; */
-  --accentColor: #c3983b;
-
-  /* Rounded */
-  --primarySize: 20px;
+  --primarySize: 16px;
   --roundedSize: 9999px; 
 
-  --font-titleText: "Libre Bodoni Variable", sans-serif;
   /* Fuentes */
-  /* --font-titleText: "DM Serif Display", serif; */
+  --font-titleText: "Lobster Two", cursive;
   --font-body: "Onest Variable", sans-serif;
 }
 
 @theme inline {
-  --color-primaryColor: var(--primaryColor);
-  --color-secundaryColor: var(--secundaryColor);
-  --color-accentColor: var(--accentColor);
+  --color-background: var(--background);
+
+  --color-primary: var(--primary);
+  --color-primaryDark: var(--primaryDark);
+  --color-primaryMuted: var(--primaryMuted);
+
+  --color-darkWarm: var(--darkWarm);
+  --color-darkMid: var(--darkMid);
+  --color-surfaceWarm: var(--surfaceWarm);
+
+  --color-cream: var(--cream);
+  --color-creamMid: var(--creamMid);
+  
 
   --radius-roundedSize: var(--roundedSize);
   --radius-primarySize: var(--primarySize);

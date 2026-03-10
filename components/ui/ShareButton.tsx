@@ -14,7 +14,7 @@ export const ShareButton = ({ title, description }: ShareButtonProps) => {
   const getShareData = () => {
     const url = window.location.href
     const encodedUrl = encodeURIComponent(url)
-    const encodedText = encodeURIComponent(`¡Me interesa este producto: ${title}! ${description}`)
+    const encodedText = encodeURIComponent(`Mira esto: ${title} ${description}`)
     return { url, encodedUrl, encodedText }
   }
 
@@ -24,7 +24,7 @@ export const ShareButton = ({ title, description }: ShareButtonProps) => {
       icon: <IconBrandWhatsapp size={24} />,
       getHref: () => {
         const { encodedUrl, encodedText } = getShareData()
-        return `https://wa.me/${contactData[0].items[0].value}?text=${encodedText}%20${encodedUrl}`
+        return `https://wa.me/?text=${encodedText}%20${encodedUrl}`
       },
     },
     {
@@ -65,12 +65,12 @@ export const ShareButton = ({ title, description }: ShareButtonProps) => {
   }
 
   return (
-    <div className="fab fab-flower absolute right-0 bottom-0 transition-colors ease-in-out">
-      <div tabIndex={0} role="button" className="bg-secundaryColor rounded-full w-12 h-12 grid place-items-center cursor-pointer">
-        <IconShare size={20} className="text-primaryColor"/>
+    <div className="fab fab-flower absolute right-4 bottom-4 transition-colors ease-in-out">
+      <div tabIndex={0} role="button" className="bg-primary rounded-full w-12 h-12 grid place-items-center cursor-pointer">
+        <IconShare size={20} className="text-darkWarm"/>
       </div>
-      <button className="fab-main-action bg-secundaryColor rounded-full w-12 h-12 grid place-items-center cursor-pointer">
-        <IconShare size={20} className="text-primaryColor"/>
+      <button className="fab-main-action bg-primary rounded-full w-12 h-12 grid place-items-center cursor-pointer">
+        <IconShare size={20} className="text-darkWarm"/>
       </button>
       {shareLinks.map((link) => (
         <button
@@ -79,14 +79,14 @@ export const ShareButton = ({ title, description }: ShareButtonProps) => {
                 e.preventDefault()
                 window.open(link.getHref(), "_blank", "noopener,noreferrer")
             }}
-            className="btn btn-circle btn-lg bg-secundaryColor text-primaryColor border-none hover:bg-primaryColor hover:text-secundaryColor group"
+            className="btn btn-circle btn-lg bg-primary text-darkWarm border-none group"
             >
             <span className="transition-transform duration-200 group-hover:scale-125">
                 {link.icon}
             </span>
         </button>
       ))}
-      <button onClick={copyUrl} className="btn btn-circle btn-lg bg-secundaryColor text-primaryColor border-none hover:bg-primaryColor hover:text-secundaryColor group">
+      <button onClick={copyUrl} className="btn btn-circle btn-lg bg-primary text-darkWarm border-none group">
         <span className="transition-transform duration-200 group-hover:scale-125">
             {copied ? <IconCheck size={24} /> : <IconLink size={24} />}
         </span>

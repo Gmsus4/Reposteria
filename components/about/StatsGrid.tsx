@@ -81,21 +81,21 @@ export const StatsGrid = () => {
       {items.map((item, index) => (
         <div
           key={index}
-          className={`bg-primaryColor rounded-primarySize overflow-hidden aspect-auto lg:aspect-auto md:aspect-square ${item.colSpan ?? ""} ${item.order} ${item.height ?? ""} ${item.type === "stat" ? "relative p-6 py-14 grid place-items-center" : ""}`}
+          className={`bg-primary rounded-primarySize overflow-hidden aspect-auto lg:aspect-auto md:aspect-square ${item.colSpan ?? ""} ${item.order} ${item.height ?? ""} ${item.type === "stat" ? "relative p-6 py-14 grid place-items-center" : ""}`}
         >
           {item.type === "stat" && item.stat ? (
             <>
-              <item.stat.iconTop className="absolute top-4 right-4 text-secundaryColor/90" size={32} />
-              <item.stat.iconBottom className="absolute bottom-4 left-4 text-secundaryColor/90" size={32} />
+              <item.stat.iconTop className="absolute top-4 right-4 text-darkWarm/90" size={32} />
+              <item.stat.iconBottom className="absolute bottom-4 left-4 text-darkWarm/90" size={32} />
               <div className="text-yellow grid gap-1">
-                <span className="text-center text-5xl md:text-7xl font-medium text-secundaryColor font-titleText">
+                <span className="text-center text-5xl md:text-7xl font-medium text-darkWarm font-titleText">
                   {item.stat.value}
                 </span>
-                <h3 className="text-center lg:text-2xl text-xl text-secundaryColor font-titleText font-bold">{item.stat.label}</h3>
+                <h3 className="text-center lg:text-2xl text-xl text-darkWarm font-titleText font-bold">{item.stat.label}</h3>
               </div>
             </>
           ) : item.image ? (
-            <Image width={1920} height={1080} src={item.image.src} alt={item.image.alt} className="w-full h-80 md:h-auto object-cover overflow-hidden" />
+            <Image width={1920} height={1080} src={item.image.src} alt={item.image.alt} className="w-full h-80 md:h-full object-cover overflow-hidden" />
           ) : null}
         </div>
       ))}

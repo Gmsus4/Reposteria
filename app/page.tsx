@@ -13,8 +13,8 @@ import { Hero } from "@/components/home/Hero";
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL ?? "https://cupcakedemo.netlify.app/"),
   title: {
-    default: "Red Velvet",
-    template: "%s — Red Velvet",  // ← todas las páginas usan este formato
+    default: "Central molletes",
+    template: "%s — Central molletes",  // ← todas las páginas usan este formato
   },
   description: "Postres artesanales hechos con amor.",
 }
