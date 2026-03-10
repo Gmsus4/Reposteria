@@ -681,7 +681,7 @@ export const menu: Product[] = [
     price: 34,
     category: "Café",
     tag: null,
-    img: "/bebidas/latte-artesanal.webp",
+    img: getMenuImage("espresso-caliente"),
     desc: "Espresso 30ml caliente.",
     descLong: "Espresso puro extraído en punto exacto. 30ml de concentración y carácter.",
     ingredients: ["Café de especialidad"],

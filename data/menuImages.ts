@@ -63,7 +63,7 @@ export const menuImages: Record<string, string> = {
   "waffle-salado": "https://images.pexels.com/photos/35832883/pexels-photo-35832883.jpeg",
 
   // ── CAFÉ ───────────────────────────────────────────────
-  "espresso-caliente":  "/bebidas/latte-artesanal.webp",
+  "espresso-caliente":  "https://images.pexels.com/photos/2068296/pexels-photo-2068296.jpeg",
   "espresso-frio":      "https://images.pexels.com/photos/2068296/pexels-photo-2068296.jpeg",
   "americano-caliente": "https://images.pexels.com/photos/2068296/pexels-photo-2068296.jpeg",
   "americano-frio":     "https://images.pexels.com/photos/2068296/pexels-photo-2068296.jpeg",
@@ -137,13 +137,5 @@ export const menuImages: Record<string, string> = {
 }
 
 /** Helper para obtener la imagen de un producto por su slug. */
-// export const getMenuImage = (slug: string, fallback = "/images/placeholder.jpg") =>
-//   menuImages[slug] ?? fallback
-
-export const getMenuImage = (slug: string, fallback = "/images/placeholder.jpg") => {
-  const img = menuImages[slug] ?? fallback
-  if (img.includes("pexels.com")) {
-    return `${img}?auto=compress&cs=tinysrgb&w=1200`
-  }
-  return img
-}
+export const getMenuImage = (slug: string, fallback = "/images/placeholder.jpg") =>
+menuImages[slug] ?? fallback

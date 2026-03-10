@@ -24,7 +24,8 @@ export const ShareButton = ({ title, description }: ShareButtonProps) => {
       icon: <IconBrandWhatsapp size={24} />,
       getHref: () => {
         const { encodedUrl, encodedText } = getShareData()
-        return `https://wa.me/?text=${encodedText}%20${encodedUrl}`
+        // return `https://wa.me/?text=${encodedText}%20${encodedUrl}`
+        return `https://wa.me/?text=${encodedUrl}`
       },
     },
     {
