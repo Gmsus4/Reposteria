@@ -5,15 +5,11 @@ import { BackButton } from "@/components/ui/BackButton"
 
 import type { Metadata } from "next"
 import { ShareButton } from "@/components/ui/ShareButton"
-import { IconArrowNarrowRight, IconBrandInstagram } from "@tabler/icons-react"
-import { socialMedia } from "@/data/socialMedia"
-import { WhatsAppOrderButton } from "@/components/ui/WhatsAppOrderButton"
-import { contactData } from "@/data/contactData"
+import { IconArrowNarrowRight } from "@tabler/icons-react"
 import { Locations } from "@/components/locations/Locations"
-import { Button } from "@/components/ui/Button"
 import { Navbar } from "@/components/shared/Navbar"
 import { Footer } from "@/components/shared/Footer"
-import { categoryExtras, getCategoryExtras } from "@/data/menuCategoryExtra"
+import { getCategoryExtras } from "@/data/menuCategoryExtra"
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
