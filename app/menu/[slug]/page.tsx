@@ -10,6 +10,7 @@ import { Locations } from "@/components/locations/Locations"
 import { Navbar } from "@/components/shared/Navbar"
 import { Footer } from "@/components/shared/Footer"
 import { getCategoryExtras } from "@/data/menuCategoryExtra"
+import ExtrasBadge from "@/components/ui/ExtrasBadge"
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
@@ -173,15 +174,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
               {/* Banner de extras por categoría */}
               {getCategoryExtras(menuProduct.category)?.map((block, i) => (
-                <div key={i} className="anim-meta w-auto py-3 border-b border-darkWarm/40 bg-creamMid/5 inline-flex flex-wrap gap-x-6 gap-y-1 items-baseline">
-                  <span className="text-xs font-bold uppercase tracking-widest text-darkWarm shrink-0">{block.title}</span>
-                  {block.note && <span className="text-xs text-darkWarm/60 italic">{block.note}</span>}
-                  {block.extras.map((e, j) => (
-                    <span key={j} className="text-xs text-darkWarm/80">
-                      {e.label} <span className="text-secundaryColor font-semibold">+${e.price}</span>
-                    </span>
-                  ))}
-                </div>
+                <ExtrasBadge key={i} title={block.title} extras={block.extras} note={block.note}/>
               ))}
 
               {/* <div className="anim-btns gap-3 pt-2">

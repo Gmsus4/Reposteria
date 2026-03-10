@@ -46,7 +46,7 @@ export const Footer = () => {
             <div className="flex flex-col gap-2">
               {
                 categories.slice(1).map((label, idx) => (
-                  <Link key={idx} href={`/products?category=${label}`} className="group flex items-center gap-2 text-sm text-darkWarm font-medium hover:text-darkWarm transition-colors duration-150">
+                  <Link key={idx} href={`/menu?category=${label}`} className="group flex items-center gap-2 text-sm text-darkWarm font-medium hover:text-darkWarm transition-colors duration-150">
                     <span className="w-0 group-hover:w-2 h-px bg-darkWarm transition-all duration-200 rounded-primarySize" />
                     {label}
                   </Link>

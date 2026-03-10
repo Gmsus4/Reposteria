@@ -9,25 +9,23 @@ export const privacy: PrivacySection[] = [
   {
     title: "Responsable de los Datos",
     items: [
-      "La empresa responsable del tratamiento de tus datos personales es Tu Postería, con domicilio en Calle Principal #123, Centro, Ciudad.",
-      "Para cualquier consulta relacionada con tus datos personales puedes contactarnos en hola@tuposteria.com.",
+      "La empresa responsable del tratamiento de tus datos personales es Central Molletes, con domicilio en Etzatlán, Jalisco, México.",
+      "Para cualquier consulta relacionada con tus datos personales puedes contactarnos a través de nuestros canales oficiales en redes sociales.",
     ],
   },
   {
     title: "Datos que Recopilamos",
     items: [
-      "Nombre completo, para identificarte y personalizar tu pedido.",
-      "Correo electrónico, para enviarte confirmaciones y actualizaciones de tu pedido.",
-      "Número de teléfono, para coordinar entregas y resolver dudas sobre tu pedido.",
-      "Dirección de entrega, únicamente cuando solicitas servicio a domicilio.",
+      "Nombre, únicamente cuando realizas un pedido anticipado o reservación de grupo.",
+      "Número de teléfono, para coordinar pedidos para llevar o aclaraciones sobre tu orden.",
+      "Dirección, únicamente cuando solicitas servicio a domicilio.",
     ],
   },
   {
     title: "Finalidad del Tratamiento",
     items: [
-      "Procesar y confirmar tus pedidos de pasteles y postres.",
-      "Coordinar la entrega o recogida de tu pedido.",
-      "Enviarte información sobre el estado de tu pedido.",
+      "Confirmar y coordinar pedidos anticipados o de grupos.",
+      "Gestionar la entrega a domicilio cuando aplique.",
       "Atender dudas, quejas o aclaraciones relacionadas con nuestros productos y servicios.",
       "Cumplir con obligaciones legales y fiscales derivadas de la relación comercial.",
     ],
@@ -35,8 +33,8 @@ export const privacy: PrivacySection[] = [
   {
     title: "Uso Secundario de los Datos",
     items: [
-      "Con tu consentimiento, podemos enviarte promociones, descuentos y novedades de temporada.",
-      "Puedes retirar tu consentimiento en cualquier momento escribiéndonos a hola@tuposteria.com.",
+      "Con tu consentimiento, podemos enviarte promociones, novedades de temporada y nuevos productos.",
+      "Puedes retirar tu consentimiento en cualquier momento contactándonos por nuestros canales oficiales.",
       "No utilizaremos tus datos para ninguna finalidad distinta a las descritas sin informarte previamente.",
     ],
   },
@@ -44,7 +42,7 @@ export const privacy: PrivacySection[] = [
     title: "Compartición de Datos",
     items: [
       "No vendemos, rentamos ni cedemos tus datos personales a terceros con fines comerciales.",
-      "Tus datos pueden ser compartidos con servicios de mensajería o entrega únicamente para coordinar la logística de tu pedido.",
+      "Tus datos pueden compartirse con servicios de entrega únicamente para coordinar la logística de tu pedido a domicilio.",
       "En caso de requerimiento legal, podemos divulgar información a autoridades competentes.",
     ],
   },
@@ -63,15 +61,15 @@ export const privacy: PrivacySection[] = [
       "Tienes derecho a Rectificar tus datos si son incorrectos o están desactualizados.",
       "Tienes derecho a Cancelar tus datos cuando consideres que no son necesarios para la finalidad del tratamiento.",
       "Tienes derecho a Oponerte al tratamiento de tus datos para fines secundarios.",
-      "Para ejercer tus derechos TAGB envía una solicitud a hola@tuposteria.com con tu nombre y la descripción de tu solicitud.",
+      "Para ejercer tus derechos TAGB contáctanos por nuestros canales oficiales indicando tu nombre y la descripción de tu solicitud.",
       "Responderemos tu solicitud en un plazo máximo de 20 días hábiles.",
     ],
   },
   {
     title: "Seguridad de los Datos",
     items: [
-      "Implementamos medidas técnicas y organizativas para proteger tus datos contra acceso no autorizado, pérdida o alteración.",
-      "El acceso a tus datos está restringido únicamente al personal necesario para procesar tu pedido.",
+      "Implementamos medidas para proteger tus datos contra acceso no autorizado, pérdida o alteración.",
+      "El acceso a tus datos está restringido únicamente al personal necesario para atender tu pedido.",
       "En caso de una brecha de seguridad que afecte tus datos, te notificaremos de inmediato.",
     ],
   },

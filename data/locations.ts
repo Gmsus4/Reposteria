@@ -3,7 +3,8 @@ export interface Location {
   slug: string
   city: string
   name: string
-  address: string
+  address: string,
+  addressMin: string,
   phone: string
   hours: string
   image: string
@@ -15,16 +16,17 @@ export interface Location {
 export const locations: Location[] = [
   {
     id: 1,
-    slug: "san-juanito-de-escobedo",
-    city: "San Juanito de Escobedo",
-    name: "Couronne Reposteria y Cafeteria",
-    address: "Cuauhtémoc 3, Centro, 46560 San Juanito de Escobedo, Jal.",
-    phone: "+52 (384) 118-3337",
-    hours: "Lun–Dom: 8:40am – 2:30pm",
-    image: "https://cdn.milenio.com/uploads/media/2024/04/30/estadio-marzo-une-sedes-mundial.jpeg",
-    gallery: ["/locations/location1.webp", "/locations/location2.webp", "/locations/location3.webp", "/locations/location4.webp"],
-    mapUrl: "https://maps.app.goo.gl/kyZ9Zn5Vj56cGk1t8",
+    slug: "etzatlan",
+    city: "Etzatlán",
+    name: "Central Molletes Cafetería",
+    address: "Ocampo 63, Centro, 46500 Etzatlán, Jal.",
+    addressMin: "Ocampo 63, Centro",
+    phone: "+52 (386) 105-4528",
+    hours: "Matutino 8:30 am a 1:00 pm | Vespertino 7:00 pm a 10:30 pm",
+    image: "",
+    gallery: ["https://foodandpleasure.com/wp-content/uploads/2025/01/etzatlan1.jpg", "https://www.zonadocs.mx/wp-content/uploads/2023/01/51958918075_349f09704e_c.jpg", "https://cdn.milenio.com/uploads/media/2019/06/15/etzatlan-jalisco-cortesia.jpg", "https://i0.wp.com/foodandpleasure.com/wp-content/uploads/2025/01/etzatlan9.jpg?resize=600%2C338&ssl=1"],
+    mapUrl: "https://maps.app.goo.gl/FuV4CUvvDCx4QiwV8",
     embedUrl:
-      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3729.812836328172!2d-104.0020315!3d20.7988585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x84266d4271b54c4f%3A0x70ca41204b678542!2sCouronne%20Reposteria%20y%20Cafeteria!5e0!3m2!1ses!2smx!4v1772551541698!5m2!1ses!2smx",
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3730.7028650788993!2d-104.07968!3d20.7628341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x84266f58f9aadc49%3A0x25e79d33308c5fc!2sCentral%20Molletes%20Cafeter%C3%ADa!5e0!3m2!1ses!2smx!4v1773169531749!5m2!1ses!2smx",
   },
 ]

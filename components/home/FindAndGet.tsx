@@ -1,11 +1,10 @@
 "use client"
 import { images } from "@/data/images"
-import { categories } from "@/data/menu"
+import { categories, getByCategory, menu } from "@/data/menu"
 import Image from "next/image"
 import Link from "next/link"
 import { useRef } from "react"
 import { IconChevronLeft, IconChevronRight } from "@tabler/icons-react"
-import { Button } from "../ui/Button"
 
 export const FindAndGet = () => {
   const scrollRef = useRef<HTMLDivElement>(null)
@@ -60,8 +59,9 @@ export const FindAndGet = () => {
                   loading="lazy"
                   width={400}
                   height={400}
-                  src={images.categories[idx]?.src ?? "/placeholder.webp"}
-                  className="w-32 md:w-40 h-auto object-cover transition-transform duration-400 group-hover:scale-110"
+                  // src={images.categories[idx]?.src ?? "/placeholder.webp"}
+                  src={getByCategory(item)[0].img ?? ""}
+                  className="w-full h-full object-cover transition-transform duration-400 group-hover:scale-110"
                   alt={item}
                 />
               </div>

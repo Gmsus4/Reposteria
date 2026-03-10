@@ -24,7 +24,7 @@ export default function LocationDetailClient({ location }: Props) {
 
   return (
     <>
-      <TitlePage title={location.city} subtitle={location.name}/>
+      <TitlePage title={location.city} subtitle={`${location.name} | ${location.addressMin}`}/>
       <div className="bg-cream px-4 py-10">
         <div className="max-w-6xl mx-auto flex flex-col gap-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">

@@ -1,13 +1,13 @@
 "use client"
-import { IconCake, IconCup, IconSparkles, IconBrandCakephp, IconStar, IconHeart } from "@tabler/icons-react"
+import { IconStar, IconBread, IconFlame, IconCoffee, IconMug, IconLeaf } from "@tabler/icons-react"
 
 const items = [
-  { icon: <IconCake size={20} />, text: "Pasteles a la Medida" },
-  { icon: <IconCup size={20} />, text: "Mesa de Postres" },
-  { icon: <IconSparkles size={20} />, text: "Sabores que Enamoran" },
-  { icon: <IconBrandCakephp size={20} />, text: "Detalles que Marcan" },
-  { icon: <IconStar size={20} />, text: "Calidad Artesanal" },
-  { icon: <IconHeart size={20} />, text: "Hecho con Amor" },
+  { icon: <IconBread size={20} />, text: "Molletes de la Casa" },
+  { icon: <IconFlame size={20} />, text: "Chilaquiles al Momento" },
+  { icon: <IconCoffee size={20} />, text: "Café de Especialidad" },
+  { icon: <IconMug size={20} />, text: "Cacao Prehispánico" },
+  { icon: <IconLeaf size={20} />, text: "Brebajes Únicos" },
+  { icon: <IconStar size={20} />, text: "Sabor Etzatlense" },
 ]
 
 export const MarqueeStrip = () => {
@@ -21,7 +21,7 @@ export const MarqueeStrip = () => {
         .marquee-track {
           display: flex;
           width: max-content;
-          animation: marquee 18s linear infinite;
+          animation: marquee 60s linear infinite;
         }
         // .marquee-track:hover {
         //   animation-play-state: paused;

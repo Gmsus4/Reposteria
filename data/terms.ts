@@ -5,62 +5,61 @@ export interface TermSection {
 
 export const terms: TermSection[] = [
   {
-    title: "Pedidos y Anticipación",
+    title: "Horarios y Servicio",
     items: [
-      "Todos los pedidos deben realizarse con un mínimo de 48 horas de anticipación.",
-      "Pasteles personalizados y mesas de postres requieren un mínimo de 5 días hábiles.",
-      "Los pedidos se confirman únicamente al recibir el anticipo correspondiente.",
+      "Nuestro horario de atención puede variar según el día; consulta nuestras redes sociales para horarios actualizados.",
+      "El servicio en mesa está sujeto a disponibilidad de lugares.",
+      "Nos reservamos el derecho de admisión.",
     ],
   },
   {
-    title: "Pagos y Anticipos",
+    title: "Pedidos y Pagos",
     items: [
-      "Se requiere un anticipo del 50% para confirmar el pedido.",
-      "El saldo restante debe liquidarse al momento de la entrega o recogida.",
-      "Aceptamos transferencia bancaria, tarjeta de crédito/débito y efectivo.",
+      "Los pedidos se realizan directamente en caja o con tu mesero.",
+      "Aceptamos efectivo y tarjeta de crédito/débito.",
+      "Los precios incluyen IVA y están sujetos a cambio sin previo aviso.",
+      "No se aceptan devoluciones de productos ya preparados salvo error de nuestra parte.",
     ],
   },
   {
-    title: "Cancelaciones y Reembolsos",
+    title: "Pedidos para Llevar",
     items: [
-      "Cancelaciones con más de 72 horas de anticipación: reembolso del 80% del anticipo.",
-      "Cancelaciones entre 24 y 72 horas: reembolso del 50% del anticipo.",
-      "Cancelaciones con menos de 24 horas: sin reembolso.",
-      "En caso de cancelación por nuestra parte, se reembolsa el 100% del pago.",
-    ],
-  },
-  {
-    title: "Entrega y Recogida",
-    items: [
-      "El cliente puede recoger su pedido en nuestras sucursales en el horario acordado.",
-      "Ofrecemos servicio de entrega a domicilio con costo adicional según la zona.",
-      "No nos hacemos responsables por daños ocasionados durante el transporte si el cliente recoge el pedido.",
-      "El tiempo de entrega puede variar según tráfico y condiciones externas.",
+      "Los pedidos para llevar pueden solicitarse en caja o por nuestros canales de contacto.",
+      "Pedidos anticipados de grupos de 10 o más personas requieren aviso previo de al menos 24 horas.",
+      "No nos responsabilizamos por el estado del producto una vez que sale de nuestras instalaciones.",
     ],
   },
   {
     title: "Alérgenos e Ingredientes",
     items: [
-      "Todos nuestros productos se elaboran en un espacio donde se manipulan: gluten, lácteos, huevo y frutos secos.",
-      "El cliente es responsable de informar alergias o restricciones alimentarias al momento del pedido.",
+      "Todos nuestros productos se elaboran en un espacio donde se manipulan gluten, lácteos, huevo y frutos secos.",
+      "El cliente es responsable de informar alergias o restricciones alimentarias al momento de ordenar.",
       "Hacemos nuestro mejor esfuerzo para atender restricciones, pero no garantizamos la ausencia total de trazas.",
+      "Consulta con nuestro personal si tienes dudas sobre los ingredientes de algún producto.",
     ],
   },
   {
-    title: "Personalización",
+    title: "Disponibilidad de Productos",
     items: [
-      "Los diseños personalizados están sujetos a disponibilidad y criterio del equipo.",
-      "Nos reservamos el derecho de realizar ajustes menores al diseño para garantizar la calidad del producto.",
-      "Las imágenes de referencia son orientativas; el resultado final puede variar.",
+      "Algunos productos como los Panecitos del Día o el Bowl de Fruta están sujetos a disponibilidad.",
+      "Los productos de temporada pueden cambiar sin previo aviso.",
+      "En caso de no contar con algún ingrediente, te informaremos y ofreceremos una alternativa.",
     ],
   },
   {
-    title: "Garantía y Calidad",
+    title: "Personalización y Modificaciones",
     items: [
-      "Garantizamos la frescura y calidad de nuestros productos al momento de la entrega.",
-      "Cualquier inconformidad debe reportarse dentro de las 2 horas posteriores a la recepción del pedido.",
-      "No nos responsabilizamos por el manejo inadecuado del producto una vez entregado.",
-      "Recomendamos conservar los productos en refrigeración y consumirlos dentro de las 48 horas.",
+      "Aceptamos modificaciones sencillas a los platillos según disponibilidad.",
+      "Cambios mayores en la preparación pueden tener un costo adicional.",
+      "No garantizamos modificaciones en horarios de alta demanda.",
+    ],
+  },
+  {
+    title: "Comportamiento y Uso del Espacio",
+    items: [
+      "Pedimos a nuestros clientes mantener un ambiente agradable y respetuoso.",
+      "Las mascotas son bienvenidas en áreas exteriores únicamente.",
+      "Somos un espacio familiar; te pedimos consideración con el volumen de voz y dispositivos electrónicos.",
     ],
   },
 ]

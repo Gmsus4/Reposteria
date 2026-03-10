@@ -35,7 +35,7 @@ export const navItems: NavItem[] = [
 ];
 
 export const otherLinks: otherLinks[] = [
-  { title: "Recomendaciones generales", href: "/products#recomendaciones" },
+  // { title: "Recomendaciones generales", href: "/products#recomendaciones" },
   { title: "Términos y condiciones", href: "/terms" },
   { title: "Privacidad", href: "/privacy" },
   // { title: "Contacto", href: "/contact" },

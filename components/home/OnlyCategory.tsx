@@ -20,13 +20,13 @@ export const OnlyCategory = () => {
         {tagProductos.map((item, idx) => (
           <Link href={`/menu/${item.slug}`} className="grid grid-cols-2 xs:grid-cols-1 gap-2 xs:gap-1 group" key={idx}>
             <div className="relative w-full rounded-primarySize aspect-square overflow-hidden shrink-0 bg-primary grid place-items-center col-span-2">
-              {/* <Image
+              <Image
                 width={1920} height={1080}
                 loading="lazy"
                 src={item.img}
-                className="lg:w-50 w-full h-auto object-cover transition-transform duration-400 group-hover:scale-130"
+                className="w-full h-full object-cover transition-transform duration-400 group-hover:scale-130"
                 alt={item.desc}
-              /> */}
+              />
               {/* Badge firma */}
               <div className="absolute top-3 left-3 flex items-center gap-1 bg-darkWarm text-primary text-[9px] uppercase tracking-widest px-2 py-1 rounded-full">
                 <IconSparkles size={10} />

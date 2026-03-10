@@ -9,12 +9,17 @@ export interface SocialM {
 export const socialMedia: Record<string, SocialM> = {
   facebook: {
     title: "Facebook",
-    href: "https://www.facebook.com/reposteriacorona",
+    href: "https://www.facebook.com/CentralMolletes",
     icon: IconBrandFacebook,
   },
   instagram: {
     title: "Instagram",
-    href: "https://www.instagram.com/tagblade/",
+    href: "https://www.instagram.com/centralmolletescafeteria",
     icon: IconBrandInstagram,
   },
+  tiktok: {
+    title: "Tiktok",
+    href: "https://www.tiktok.com/@centralmolleteset",
+    icon: IconBrandTiktok,
+  }
 };

@@ -6,6 +6,7 @@ import { menu } from "@/data/menu"
 import { Button } from "../ui/Button"
 import { IconArrowNarrowRight } from "@tabler/icons-react"
 import { getCategoryExtras } from "@/data/menuCategoryExtra"
+import ExtrasBadge from "../ui/ExtrasBadge"
 
 const categories = ["Todos", ...new Set(menu.map(p => p.category))]
 // const categories = ["Todos", "Pasteles", "Café", "Postres", "Temporada"]
@@ -134,19 +135,7 @@ export const MenuComponent = () => {
 
         {/* Banner de extras por categoría */}
         {active !== "Todos" && getCategoryExtras(active)?.map((block, i) => (
-          <div key={i} className="mb-6 px-4 w-auto py-3 border-b border-darkWarm/40 bg-creamMid/5 inline-flex flex-wrap gap-x-6 gap-y-1 items-baseline">
-            <span className="text-xs font-bold uppercase tracking-widest text-darkWarm shrink-0">
-              {block.title}
-            </span>
-            {block.note && (
-              <span className="text-xs text-darkWarm/60 italic">{block.note}</span>
-            )}
-            {block.extras.map((e, j) => (
-              <span key={j} className="text-xs text-darkWarm/80">
-                {e.label} <span className="text-secundaryColor font-semibold">+${e.price}</span>
-              </span>
-            ))}
-          </div>
+          <ExtrasBadge key={i} title={block.title} extras={block.extras} note={block.note}/>
         ))}
         
           {/* Grid */}

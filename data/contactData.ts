@@ -15,22 +15,20 @@ export const contactData: ContactInfo[] = [
     title: "Teléfono",
     prefix: "tel:",
     items: [
-      { label: "+52 (555) 123-4567", value: "523322364324" },
-      // { label: "+52 (555) 987-6543" },
+      { label: "+52 (386) 105-4528", value: "3861054528" },
     ],
   },
   {
     title: "Email",
     prefix: "mailto:",
     items: [
-      { label: "hola@tuposteria.com" },
+      { label: "centralmolletes@gmail.com" },
     ],
   },
   {
     title: "Ubicaciones",
     items: [
-      { label: "Calle Principal #123, Centro", href: "https://maps.app.goo.gl/..." },
-      // { label: "Av. Siempre Viva #456, Col. Norte", href: "https://maps.app.goo.gl/..." },
+      { label: "Ocampo #63, Centro", href: "https://maps.app.goo.gl/FuV4CUvvDCx4QiwV8" },
     ],
   },
 ]
