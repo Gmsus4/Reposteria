@@ -17,8 +17,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!menuProduct) return {}
 
   return {
-    title: `${menuProduct.name} — Tu Postería`,
-    metadataBase: new URL("https://cupcakedemo.netlify.app/"),
+    title: `${menuProduct.name} — Tu café del día`,
+    metadataBase: new URL("https://reposteriademo.netlify.app/"),
     description: menuProduct.desc,
     openGraph: {
       title: menuProduct.name,
