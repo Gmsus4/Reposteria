@@ -18,7 +18,9 @@ export const Locations = ({ className = "bg-primary py-10" }: LocationProps) => 
         {/* Mapa */}
         <div className="overflow-hidden rounded-primarySize order-2 lg:order-1 min-h-72">
           <Image
-            width={1920} height={1080}
+            width={800}
+            height={600}
+            sizes="(max-width: 1024px) 100vw, 50vw"
             loading="lazy"
             src={images.map[0].src}
             alt="Ubicación Central Molletes"
@@ -39,7 +41,7 @@ export const Locations = ({ className = "bg-primary py-10" }: LocationProps) => 
           <div className="h-px bg-primary/10" />
 
           {/* Datos */}
-          <div className="flex flex-col gap-3">
+          <address className="flex flex-col gap-3 not-italic">
             <div className="flex items-start gap-3">
               <IconMapPin size={15} className="text-primary/40 mt-0.5 shrink-0" />
               <p className="text-sm text-primary/75 leading-relaxed">{loc.address}</p>
@@ -52,7 +54,7 @@ export const Locations = ({ className = "bg-primary py-10" }: LocationProps) => 
               <IconPhone size={15} className="text-primary/40 shrink-0" />
               <p className="text-sm text-primary/75">{loc.phone}</p>
             </div>
-          </div>
+          </address>
 
           <div className="h-px bg-primary/10" />
 
@@ -83,6 +85,7 @@ export const Locations = ({ className = "bg-primary py-10" }: LocationProps) => 
             />
             <Button
               url={`tel:${loc.phone}`}
+              aria-label={`Llamar a ${loc.name}`}
               isFilled={false}
               className="flex-1 text-darkWarm ring-primary/20"
               size="min"
@@ -90,6 +93,7 @@ export const Locations = ({ className = "bg-primary py-10" }: LocationProps) => 
               <IconPhone size={18} />
             </Button>
             <Button
+              aria-label="Ver en Google Maps"
               url={loc.mapUrl}
               target="_blank"
               isFilled={true}

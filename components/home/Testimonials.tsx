@@ -28,40 +28,48 @@ const testimonials = [
 
 export const Testimonials = () => {
   return (
-    <div className="w-full bg-creamMid xs:min-h-[calc(100dvh-4rem)] md:py-26 py-16 flex flex-col items-center justify-center md:gap-16 gap-12 px-6">
+    <section aria-labelledby="testimonials-title" className="w-full bg-creamMid xs:min-h-[calc(100dvh-4rem)] md:py-26 py-16 flex flex-col items-center justify-center md:gap-16 gap-12 px-6">
       <h2 className="text-darkWarm font-titleText text-3xl md:text-6xl leading-tight text-center">
         Nos alegra <br /> el día leerlos
       </h2>
 
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6">
         {testimonials.map((t, i) => (
-          <div key={i} className={`flex gap-4 ${t.imageFirst ? "lg:flex-col md:flex-row flex-col-reverse" : "lg:flex-col md:flex-row flex-col"}`}>
+          <div key={t.author} className={`flex gap-4 ${t.imageFirst ? "lg:flex-col md:flex-row flex-col-reverse" : "lg:flex-col md:flex-row flex-col"}`}>
             {t.imageFirst && (
               <div className="rounded-primarySize overflow-hidden flex-1 lg:min-h-96 min-h-60">
-                <Image loading="lazy" width={1920} height={1080} src={t.image} alt="" className="w-full h-full object-cover" />
+                <Image
+                  loading="lazy"
+                  width={600}
+                  height={400}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  src={t.image}
+                  alt={`Foto relacionada con la reseña de ${t.author}`}
+                  className="w-full h-full object-cover"
+                />
               </div>
             )}
 
-            <div className="border-1 border-darkWarm/20 rounded-primarySize bg-cream/15 md:flex-1 lg:flex-0">
-              <div className="p-7 flex flex-col h-full justify-between gap-4">
+            <div className="border-1 border-darkWarm/20 rounded-primarySize bg-cream/15 md:flex-1 lg:flex-none">
+              <blockquote className="text-darkWarm font-light text-base p-7 flex flex-col h-full justify-between gap-4">
                 <IconQuote size={30} className="text-darkWarm" />
-                <p className="text-darkWarm font-light text-base">{t.quote}</p>
-                <div className="flex gap-2">
-                  <p className="text-darkWarm font-semibold font-titleText text-md">{t.author}</p>
-                  <p className="text-darkWarm">—</p>
-                  <p className="text-darkWarm/80 font-semibold font-titleText text-md">{t.role}</p>
-                </div>
-              </div>
+                <p>{t.quote}</p>
+                <footer className="flex gap-2 mt-4">
+                  <cite className="text-darkWarm font-semibold font-titleText">{t.author}</cite>
+                  <span className="text-darkWarm">—</span>
+                  <span className="text-darkWarm/80 font-semibold font-titleText">{t.role}</span>
+                </footer>
+              </blockquote>
             </div>
 
             {!t.imageFirst && (
               <div className="rounded-primarySize overflow-hidden lg:min-h-96 min-h-60 flex-1">
-                <Image loading="lazy" width={1920} height={1080} src={t.image} alt="" className="w-full h-full object-cover" />
+                <Image loading="lazy" width={1920} height={1080} src={t.image} alt={`Foto relacionada con la reseña de ${t.author}`} className="w-full h-full object-cover" />
               </div>
             )}
           </div>
         ))}
       </div>
-    </div>
+    </section>
   )
 }

@@ -24,7 +24,7 @@ export const FindAndGet = () => {
       <div className="flex flex-col items-center gap-3 px-6 text-center">
         <div className="flex items-center gap-3">
           <span className="w-8 h-px bg-darkWarm/25" />
-          <span className="text-[10px] uppercase tracking-[0.25em] text-darkWarm/40">Menú completo</span>
+          <span className="text-[10px] uppercase tracking-[0.25em] text-darkWarm/90">Menú completo</span>
           <span className="w-8 h-px bg-darkWarm/25" />
         </div>
         <h2 className="text-darkWarm font-titleText text-3xl md:text-6xl leading-tight">
@@ -36,6 +36,7 @@ export const FindAndGet = () => {
       <div className="relative w-full max-w-7xl mx-auto">
         {/* Botón izquierda */}
         <button
+          aria-label="Desplazar izquierda"
           onClick={() => scroll("left")}
           className="absolute cursor-pointer left-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-darkWarm text-primary flex items-center justify-center shadow-md hover:scale-105 transition-transform"
         >
@@ -51,14 +52,16 @@ export const FindAndGet = () => {
           {visibleCategories.map((item, idx) => (
             <Link
               href={`/menu?category=${item}`}
-              key={idx}
+              key={item}
               className="flex flex-col items-center gap-4 group shrink-0"
             >
               <div className="w-36 h-36 md:w-48 md:h-48 rounded-full overflow-hidden bg-primary grid place-items-center shrink-0">
                 <Image
-                  loading="lazy"
+                  loading={idx < 3 ? "eager" : "lazy"}
+                  priority={idx === 0}
                   width={400}
                   height={400}
+                  sizes="(max-width: 768px) 144px, 192px"
                   // src={images.categories[idx]?.src ?? "/placeholder.webp"}
                   src={getByCategory(item)[0].img ?? ""}
                   className="w-full h-full object-cover transition-transform duration-400 group-hover:scale-110"
@@ -74,6 +77,7 @@ export const FindAndGet = () => {
 
         {/* Botón derecha */}
         <button
+          aria-label="Desplazar derecha"
           onClick={() => scroll("right")}
           className="absolute cursor-pointer right-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-darkWarm text-primary flex items-center justify-center shadow-md hover:scale-105 transition-transform"
         >
@@ -85,8 +89,6 @@ export const FindAndGet = () => {
         <div className="pointer-events-none absolute right-0 top-0 h-full w-20 bg-gradient-to-l from-cream to-transparent z-[1]" />
       </div>
 
-      {/* CTA */}
-      {/* <Button title={"Ver menú completo"} url={"/menu"} isFilled={false}/> */}
       <Link
         href="/menu"
         className="text-[11px] uppercase tracking-[0.25em] text-darkWarm hover:text-darkWarm transition-colors flex items-center gap-2"

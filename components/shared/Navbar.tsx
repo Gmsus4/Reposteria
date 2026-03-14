@@ -18,7 +18,7 @@ export const Navbar = () => {
   }
 
   return (
-    <div className="navbar bg-primary fixed z-1000">
+    <nav aria-label="Navegación principal" className="navbar bg-primary fixed z-1000">
       <div className="max-w-7xl mx-auto w-full flex items-center justify-center">
         <div className="navbar-start lg:hidden">
           <div className="dropdown">
@@ -27,10 +27,10 @@ export const Navbar = () => {
             </div>
 
             <ul tabIndex={-1} className="menu dropdown-content z-[999] mt-3 w-64 p-3 shadow-2xl rounded-2xl bg-darkWarm border border-primary/10">
-              {navItems.map((item, idx) => {
+              {navItems.map((item) => {
                 const Icon = item.icon
                 return (
-                  <li key={idx}>
+                  <li key={item.href}>
                     <Link
                       href={item.href}
                       className="flex items-center justify-between px-4 py-3 rounded-xl text-primary font-bold hover:bg-primary hover:text-darkWarm transition-all duration-200 group"
@@ -122,6 +122,6 @@ export const Navbar = () => {
           </div>
         </div>
       </div>
-    </div>
+    </nav>
   )
 }

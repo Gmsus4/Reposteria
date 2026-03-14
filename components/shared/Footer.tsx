@@ -1,9 +1,11 @@
 import { navItems, otherLinks } from "@/data/navItems"
-import { IconCup } from "@tabler/icons-react"
 import Link from "next/link"
 import { categories } from "@/data/menu"
 import { LogoBtn } from "../ui/LogoBtn"
 import { SocialLinks } from "../ui/SocialLinks"
+
+const currentYear = new Date().getFullYear()
+
 
 export const Footer = () => {
   return (
@@ -15,10 +17,10 @@ export const Footer = () => {
             <div className="grid place-items-center bg-accentColor rounded-primarySize">
               <LogoBtn />
             </div>
-            <span className="text-darkWarm mt-1 font-bold text-xl tracking-tight">TAGB</span>
+            <span className="text-darkWarm mt-1 font-bold text-xl tracking-tight">Central Molletes</span>
           </div>
           <p className="text-darkWarm text-sm max-w-xs sm:text-right leading-relaxed">
-            Endulzando momentos desde 2010. <br className="hidden sm:block"/>Hecho con amor, entregado con dedicación.
+            Cafetería en Etzatlán desde 2020 <br className="hidden sm:block"/>Hecho con amor, entregado con dedicación.
           </p>
         </div>
 
@@ -26,12 +28,11 @@ export const Footer = () => {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-10">
           {/* Col 1 — Inicio */}
           <div className="flex flex-col gap-3">
-            <span className="text-[10px] uppercase tracking-[0.2em] text-darkWarm/90 font-semibold">Inicio</span>
+            <h3 className="text-[10px] uppercase tracking-[0.2em] text-darkWarm/90 font-semibold">Inicio</h3>
             <div className="flex flex-col gap-2">
-              {navItems.map((item, idx) => {
-                const Icon = item.icon
+              {navItems.map((item) => {
                 return (
-                  <Link key={idx} href={item.href} className="group flex items-center gap-2 text-sm text-darkWarm font-medium hover:text-darkWarm transition-colors duration-150">
+                  <Link key={item.href} href={item.href} className="group flex items-center gap-2 text-sm text-darkWarm font-medium hover:text-darkWarm transition-colors duration-150">
                     <span className="w-0 group-hover:w-2 h-px bg-darkWarm transition-all duration-200 rounded-primarySize" />
                     {item.title}
                   </Link>
@@ -42,11 +43,11 @@ export const Footer = () => {
 
           {/* Col 2 — Categorías */}
           <div className="flex flex-col gap-3">
-            <span className="text-[10px] uppercase tracking-[0.2em] text-darkWarm/90 font-semibold">Especialidades</span>
+            <h3 className="text-[10px] uppercase tracking-[0.2em] text-darkWarm/90 font-semibold">Especialidades</h3>
             <div className="flex flex-col gap-2">
               {
-                categories.slice(1).map((label, idx) => (
-                  <Link key={idx} href={`/menu?category=${label}`} className="group flex items-center gap-2 text-sm text-darkWarm font-medium hover:text-darkWarm transition-colors duration-150">
+                categories.slice(1).map((label) => (
+                  <Link key={label} href={`/menu?category=${label}`} className="group flex items-center gap-2 text-sm text-darkWarm font-medium hover:text-darkWarm transition-colors duration-150">
                     <span className="w-0 group-hover:w-2 h-px bg-darkWarm transition-all duration-200 rounded-primarySize" />
                     {label}
                   </Link>
@@ -57,13 +58,13 @@ export const Footer = () => {
 
           {/* Col 3 — Empresa (visible solo sm+) */}
           <div className="flex flex-col gap-3 col-span-2 sm:col-span-1">
-            <span className="text-[10px] uppercase tracking-[0.2em] text-darkWarm/90 font-semibold">Empresa</span>
+            <h3 className="text-[10px] uppercase tracking-[0.2em] text-darkWarm/90 font-semibold">Empresa</h3>
             <div className="flex flex-col gap-2">
               {
-                otherLinks.map((items, idx) => (
-                <Link key={idx} href={items.href} className="group flex items-center gap-2 text-sm text-darkWarm font-medium hover:text-darkWarm transition-colors duration-150">
+                otherLinks.map((link) => (
+                <Link key={link.href} href={link.href} className="group flex items-center gap-2 text-sm text-darkWarm font-medium hover:text-darkWarm transition-colors duration-150">
                   <span className="w-0 group-hover:w-2 h-px bg-darkWarm transition-all duration-200 rounded-primarySize" />
-                  {items.title}
+                  {link.title}
                 </Link>
                 ))
               }
@@ -72,17 +73,17 @@ export const Footer = () => {
 
           {/* Col 4 — Síguenos */}
           <div className="flex flex-col gap-3">
-            <span className="text-[10px] uppercase tracking-[0.2em] text-darkWarm/90 font-semibold">Síguenos</span>
+            <h3 className="text-[10px] uppercase tracking-[0.2em] text-darkWarm/90 font-semibold">Síguenos</h3>
             <SocialLinks />
           </div>
         </div>
 
         {/* Barra inferior */}
-        <div className="mt-10 pt-5 flex flex-col gap-2 text-[11px] text-darkWarmp">
-          <h3 className="font-titleText text-darkWarm font-bold text-center text-5xl xx:text-6xl md:text-8xl lg:text-[160px] xl:text-[180px] w-full leading-none whitespace-nowrap">
+        <div className="mt-10 pt-5 flex flex-col gap-2 text-[11px] text-darkWarm">
+          <p className="font-titleText text-darkWarm font-bold text-center text-5xl xx:text-6xl md:text-8xl lg:text-[160px] xl:text-[180px] w-full leading-none whitespace-nowrap">
             Central molletes
-          </h3>
-          <span className="text-center text-darkWarm">© {new Date().getFullYear()} TAGB Industries Ltd. Todos los derechos reservados.</span>
+          </p>
+          <span className="text-center text-darkWarm">© {currentYear} TAGB Industries Ltd. Todos los derechos reservados.</span>
         </div>
       </div>
     </footer>

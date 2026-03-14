@@ -42,7 +42,7 @@ export const AboutDetails = () => {
                 Desde 2020 despertando Etzatlán con molletes, buen café y mucho cariño. Cada platillo sale de la cocina con el mismo entusiasmo del primer día.
               </p>
             </div>
-            <div className="icons grid grid-cols-1 xs:grid-cols-2 place-items-center pt-4 gap-0 self-start">
+            <div className="grid grid-cols-1 xs:grid-cols-2 place-items-center pt-4 gap-0 self-start">
               {features.map(({ icon: Icon, label, border }) => (
                 <div
                   key={label}
@@ -59,14 +59,14 @@ export const AboutDetails = () => {
 
           <div className="grid xs:grid-cols-2 grid-cols-1 gap-6">
             <div className="rounded-primarySize overflow-hidden h-full">
-              <Image loading="lazy" width={1920} height={1080} src={images.aboutDetails[0].src} alt="Interior de Central Molletes" className="h-full object-cover" />
+              <Image priority loading="eager" width={800} height={1000} sizes="(max-width: 480px) 100vw, (max-width: 1024px) 50vw, 33vw" src={images.aboutDetails[0].src} alt="Interior de Central Molletes" className="h-full object-cover" />
             </div>
             <div className="grid grid-rows-2 gap-6 h-full">
               <div className="rounded-primarySize overflow-hidden">
-                <Image loading="lazy" width={1920} height={1080} src={images.aboutDetails[1].src} alt="Platillos de Central Molletes" className="h-full object-cover" />
+                <Image loading="lazy" width={800} height={1000} sizes="(max-width: 480px) 100vw, (max-width: 1024px) 50vw, 33vw" src={images.aboutDetails[1].src} alt="Platillos de Central Molletes" className="h-full object-cover" />
               </div>
               <div className="rounded-primarySize overflow-hidden">
-                <Image loading="lazy" width={1920} height={1080} src={images.aboutDetails[2].src} alt="Café de especialidad" className="h-full object-cover" />
+                <Image loading="lazy" width={800} height={1000} sizes="(max-width: 480px) 100vw, (max-width: 1024px) 50vw, 33vw" src={images.aboutDetails[2].src} alt="Café de especialidad" className="h-full object-cover" />
               </div>
             </div>
           </div>
